@@ -1,129 +1,352 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Nainesh Khanjire</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Nainesh Khanjire - Data Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #3a86ff;
+      --dark: #0a0a0a;
+      --darker: #151313;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --card-bg: #1e1e1e;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      background-color: #151313;
-      color: #fff;
+      background-color: var(--darker);
+      color: var(--light);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 1.5;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 2rem;
     }
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 600;
-      margin: 0;
-    }
-    a {
-      color: #f9f5f5;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .about {
-  text-align: center;
-    }
-
-    .card {
-      background-color: #333;
-      border-radius: 0.5rem;
-      padding: 1rem;
+    
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 4rem 0;
       margin-bottom: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    .card img {
-      border-radius: 50%;
-      max-width: 10rem;
-      margin-bottom: 1rem;
-    }
-    .card h2 {
-      margin-top: 0;
-    }
-    .card p {
-      margin: 0;
+    
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
+      padding: 0 2rem;
     }
+    
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      margin: 0 auto 1.5rem;
+      object-fit: cover;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: white;
+      font-weight: 700;
+    }
+    
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+    .about {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    
     .social-links {
       display: flex;
       justify-content: center;
-      margin-top: 2rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
-    .social-links a {
-      margin: 0 1rem;
+    
+    .social-link {
+      color: var(--light);
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
     }
-    .project {
+    
+    .social-link:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    section {
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 2rem;
       margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
-    .project h3 {
-      margin-top: 0;
+    
+    .card:hover {
+      transform: translateY(-5px);
     }
-    .project p {
-      margin: 0 0 0.5rem 0;
+    
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
     }
-    .hobbies ul {
+    
+    .job-title {
+      font-size: 1.25rem;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+    
+    .company {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .date {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .skill-category {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .skill-category h4 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+    
+    .skills-list {
       list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 0 0;
+    }
+    
+    .skills-list li {
+      margin-bottom: 0.5rem;
+      color: #ddd;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .skills-list li:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    
+    .hobbies {
       display: flex;
       gap: 1rem;
-      justify-content: center;
       flex-wrap: wrap;
+      margin-top: 1rem;
     }
-    .hobbies li {
-      background: #444;
-      padding: 0.3rem 0.8rem;
-      border-radius: 1rem;
-      font-size: 0.9em;
+    
+    .hobby {
+      background: rgba(58, 134, 255, 0.1);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      header {
+        padding: 2rem 0;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .experience-header {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Hello!👋</h1>
-  </header>
-  <main>
-    <div class="card">
-      <img src="https://avatars.githubusercontent.com/u/33624511?s=400&u=c802bd004ead23908b2cd7be290cef38564afcfb&v=4" alt="Profile Picture">
-      <h2>Nainesh Khanjire</h2>
-      <p>Data Engineer | Databricks | dbt | Snowflake | Azure</p>
-      <div class="about">
-        <h3>About Me</h3>
-        <p>Data Engineer with 2.5+ years of experience designing and operating Databricks Lakehouse architectures using PySpark, Delta Lake, and cloud-native data pipelines. Proven expertise in building Medallion Architecture data flows and optimizing Spark workloads at scale.</p>
+    <div class="header-content">
+      <img src="https://avatars.githubusercontent.com/u/33624511?s=400&u=c802bd004ead23908b2cd7be290cef38564afcfb&v=4" alt="Nainesh Khanjire" class="profile-img">
+      <h1>Nainesh Khanjire</h1>
+      <p class="tagline">Data Engineer | Databricks | dbt | Snowflake | Azure</p>
+      <p class="about">
+        Data Engineer with 2.5+ years of experience designing and operating Databricks Lakehouse architectures using PySpark, Delta Lake, and cloud-native data pipelines. Proven expertise in building Medallion Architecture data flows and optimizing Spark workloads at scale.
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/nainesh-khanjire" class="social-link" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/naineshkhanjire" class="social-link" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/naineshkhanjire" class="social-link" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:khanjirenainesh@gmail.com" class="social-link" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2 class="section-title">Experience</h2>
       
-      <div class="hobbies">
-        <h4>Hobbies</h4>
-        <ul>
-          <li>Photography</li>
-          <li>Reading</li>
-          <li>Self-hosting open source tools</li>
+      <div class="card">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Data Engineer</h3>
+            <p class="company">Kearney Activate (Cervello India Pvt. Ltd.)</p>
+          </div>
+          <div class="date">Jun 2023 - Present</div>
+        </div>
+        <ul style="list-style: none; padding-left: 1rem;">
+          <li>• Architected and implemented a scalable Databricks Lakehouse using Medallion Architecture, optimizing data flows through Bronze, Silver, and Gold layers</li>
+          <li>• Developed ETL/ELT pipelines using Azure Data Factory to migrate data from MSSQL/Redshift to Snowflake</li>
+          <li>• Built 500+ DBT models with 40% performance gain through materialized views and incremental loads</li>
+          <li>• Implemented PySpark optimizations achieving 60% faster query performance on multi-TB datasets</li>
+          <li>• Orchestrated data pipelines using Databricks Workflows with GitLab integration</li>
         </ul>
       </div>
-    </div>
-    <div class="project">
-      <h4>Key Achievements</h4>
-      <p>• Architected scalable Databricks Lakehouse using Medallion Architecture, optimizing data flows</p>
-      <p>• Developed 500+ DBT models with 40% performance gain through materialized views</p>
-      <p>• Implemented PySpark optimizations achieving 60% faster query performance on multi-TB datasets</p>
-      <p>• Orchestrated data pipelines using Databricks Workflows with GitLab integration</p>
-    </div>
-    <div class="contact">
-      <h4>Contact</h4>
-      <p>Email: <a href="mailto:nkhanjire@gmail.com">nkhanjire@gmail.com</a></p>
-    </div>
-    <div class="social-links">
-      <a href="https://github.com/nainesh-khanjire"><img src="https://img.icons8.com/material-rounded/24/ffffff/github.png"/></a>
-      <a href="https://linkedin.com/in/naineshkhanjire"><img src="https://img.icons8.com/material-rounded/24/ffffff/linkedin.png"/></a>
-      <a href="https://twitter.com/naineshkhanjire"><img src="https://img.icons8.com/material-rounded/24/ffffff/twitter.png"/></a>
-    </div>
-  </main>
+    </section>
+
+    <section>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="card">
+        <div class="skills-container">
+          <div class="skill-category">
+            <h4>Data Engineering</h4>
+            <ul class="skills-list">
+              <li>Databricks Lakehouse</li>
+              <li>Delta Lake & Unity Catalog</li>
+              <li>Data Architecture</li>
+              <li>ETL/ELT Pipelines</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Technologies</h4>
+            <ul class="skills-list">
+              <li>PySpark & SparkSQL</li>
+              <li>dbt (Data Build Tool)</li>
+              <li>Snowflake</li>
+              <li>Azure Data Factory</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Cloud & Tools</h4>
+            <ul class="skills-list">
+              <li>Azure Databricks</li>
+              <li>Azure Data Lake Storage</li>
+              <li>Git & GitLab</li>
+              <li>Apache Airflow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">PG-Diploma in Big Data Analytics (PG-DBDA)</h3>
+            <p class="company">Centre for Development of Advanced Computing (CDAC ACTS)</p>
+          </div>
+          <div class="date">Sep 2022 - Mar 2023</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Bachelor of Engineering in Chemical Engineering</h3>
+            <p class="company">P.V.P. Institute of Technology</p>
+          </div>
+          <div class="date">July 2015 - Oct 2019</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Hobbies</h2>
+      <div class="card">
+        <div class="hobbies">
+          <span class="hobby">Photography</span>
+          <span class="hobby">Reading</span>
+          <span class="hobby">Self-hosting</span>
+          <span class="hobby">Open Source</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </body>
 </html>
