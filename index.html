@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Nainesh Khanjire</title>
-  <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #151313;
       color: #fff;
-      font-family: 'JetBrains Mono', 'JetBrains Mono italic';
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-weight: 400;
       font-size: 16px;
       line-height: 1.5;
       padding: 2rem;
     }
     h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
+      font-weight: 600;
       margin: 0;
     }
     a {
@@ -66,7 +66,22 @@
       margin-top: 0;
     }
     .project p {
-      margin: 0;
+      margin: 0 0 0.5rem 0;
+    }
+    .hobbies ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hobbies li {
+      background: #444;
+      padding: 0.3rem 0.8rem;
+      border-radius: 1rem;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -78,22 +93,27 @@
     <div class="card">
       <img src="https://avatars.githubusercontent.com/u/33624511?s=400&u=c802bd004ead23908b2cd7be290cef38564afcfb&v=4" alt="Profile Picture">
       <h2>Nainesh Khanjire</h2>
-      <p>Big Data Analytics, CDAC ACTS Bengaluru</p>
+      <p>Data Engineer | Databricks | dbt | Snowflake | Azure</p>
       <div class="about">
         <h3>About Me</h3>
-        <p>Data professional with a PG-Diploma in Big Data Analytics and knowledge in Python, PySpark, MongoDB, 
-            MySQL, Scikit-Learn, and Power BI. Eager to learn, Seeking opportunities in big data domain.</p>
+        <p>Data Engineer with 2.5+ years of experience designing and operating Databricks Lakehouse architectures using PySpark, Delta Lake, and cloud-native data pipelines. Proven expertise in building Medallion Architecture data flows and optimizing Spark workloads at scale.</p>
       </div>
       
-      <p>Hobbies: <em>Street, Landscape Photography, Reading : Philosophy, Greek history</em></p>
+      <div class="hobbies">
+        <h4>Hobbies</h4>
+        <ul>
+          <li>Photography</li>
+          <li>Reading</li>
+          <li>Self-hosting open source tools</li>
+        </ul>
+      </div>
     </div>
     <div class="project">
-      <h4>Analysis of the Relationship between Weather and Environmental factors with Motor Vehicle Accidents</h4>
-      <p>Platform: Python, PySpark, MongoDB, Scikit-Learn, Power BI</p>
-      <p> Developed a traffic crash analysis model using combined web scraped crashes and weather data to 
-        calculate the severity of the crash and provide insights into the relationship between weather and 
-        environmental factors.
-        </p>
+      <h4>Key Achievements</h4>
+      <p>• Architected scalable Databricks Lakehouse using Medallion Architecture, optimizing data flows</p>
+      <p>• Developed 500+ DBT models with 40% performance gain through materialized views</p>
+      <p>• Implemented PySpark optimizations achieving 60% faster query performance on multi-TB datasets</p>
+      <p>• Orchestrated data pipelines using Databricks Workflows with GitLab integration</p>
     </div>
     <div class="contact">
       <h4>Contact</h4>
