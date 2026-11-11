@@ -1057,6 +1057,7 @@
       border: 1px solid var(--line-card);
       border-radius: 3px;
       padding: 12px 14px;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -1096,6 +1097,7 @@
       font-size: 13px;
       line-height: 1.6;
       color: var(--text-secondary);
+      overflow-wrap: break-word;
     }
 
     .skill-items strong {
@@ -1105,7 +1107,7 @@
 
     .skill-sep {
       color: var(--line-strong);
-      margin: 0 5px;
+      margin: 0 2px;
       user-select: none;
     }
 
@@ -1483,7 +1485,7 @@
             <span class="skill-cat-count">Core</span>
           </div>
           <p class="skill-items">
-            <strong>Python</strong><span class="skill-sep">&middot;</span><strong>SQL</strong>
+            <strong>Python</strong><span class="skill-sep"> &middot; </span><strong>SQL</strong>
           </p>
         </article>
 
@@ -1493,7 +1495,7 @@
             <span class="skill-cat-count">Fabric &amp; Azure</span>
           </div>
           <p class="skill-items">
-            <strong>Microsoft Fabric</strong><span class="skill-sep">&middot;</span>OneLake<span class="skill-sep">&middot;</span>Fabric Lakehouse<span class="skill-sep">&middot;</span>Fabric Data Factory<span class="skill-sep">&middot;</span>Azure Data Factory<span class="skill-sep">&middot;</span>ADLS Gen2<span class="skill-sep">&middot;</span><strong>Azure Databricks</strong>
+            <strong>Microsoft Fabric</strong><span class="skill-sep"> &middot; </span>OneLake<span class="skill-sep"> &middot; </span>Fabric Lakehouse<span class="skill-sep"> &middot; </span>Fabric Data Factory<span class="skill-sep"> &middot; </span>Azure Data Factory<span class="skill-sep"> &middot; </span>ADLS Gen2<span class="skill-sep"> &middot; </span><strong>Azure Databricks</strong>
           </p>
         </article>
 
@@ -1503,7 +1505,7 @@
             <span class="skill-cat-count">Spark &amp; Delta</span>
           </div>
           <p class="skill-items">
-            <strong>Apache Spark</strong><span class="skill-sep">&middot;</span><strong>PySpark DataFrames</strong><span class="skill-sep">&middot;</span>Spark SQL<span class="skill-sep">&middot;</span><strong>Delta Lake</strong><span class="skill-sep">&middot;</span>Medallion Architecture<span class="skill-sep">&middot;</span>Unity Catalog<span class="skill-sep">&middot;</span>Databricks Workflows<span class="skill-sep">&middot;</span>Incremental Processing<span class="skill-sep">&middot;</span>SCD Type 1/2
+            <strong>Apache Spark</strong><span class="skill-sep"> &middot; </span><strong>PySpark DataFrames</strong><span class="skill-sep"> &middot; </span>Spark SQL<span class="skill-sep"> &middot; </span><strong>Delta Lake</strong><span class="skill-sep"> &middot; </span>Medallion Architecture<span class="skill-sep"> &middot; </span>Unity Catalog<span class="skill-sep"> &middot; </span>Databricks Workflows<span class="skill-sep"> &middot; </span>Incremental Processing<span class="skill-sep"> &middot; </span>SCD Type 1/2
           </p>
         </article>
 
@@ -1513,7 +1515,7 @@
             <span class="skill-cat-count">Snowflake &amp; dbt</span>
           </div>
           <p class="skill-items">
-            <strong>Snowflake</strong><span class="skill-sep">&middot;</span>Snowflake Cortex<span class="skill-sep">&middot;</span><strong>dbt Core / Cloud</strong><span class="skill-sep">&middot;</span>Incremental Models<span class="skill-sep">&middot;</span>Materialized Views<span class="skill-sep">&middot;</span>Schema &amp; Custom Tests<span class="skill-sep">&middot;</span>dbt Packages<span class="skill-sep">&middot;</span><strong>Apache Airflow</strong>
+            <strong>Snowflake</strong><span class="skill-sep"> &middot; </span>Snowflake Cortex<span class="skill-sep"> &middot; </span><strong>dbt Core / Cloud</strong><span class="skill-sep"> &middot; </span>Incremental Models<span class="skill-sep"> &middot; </span>Materialized Views<span class="skill-sep"> &middot; </span>Schema &amp; Custom Tests<span class="skill-sep"> &middot; </span>dbt Packages<span class="skill-sep"> &middot; </span><strong>Apache Airflow</strong>
           </p>
         </article>
 
@@ -1523,7 +1525,7 @@
             <span class="skill-cat-count">Architecture</span>
           </div>
           <p class="skill-items">
-            <strong>ETL / ELT Architecture</strong><span class="skill-sep">&middot;</span>Metadata-Driven Pipelines<span class="skill-sep">&middot;</span>Dimensional Data Modeling<span class="skill-sep">&middot;</span>Change Data Capture (CDC)<span class="skill-sep">&middot;</span>Source-to-Target Reconciliation
+            <strong>ETL / ELT Architecture</strong><span class="skill-sep"> &middot; </span>Metadata-Driven Pipelines<span class="skill-sep"> &middot; </span>Dimensional Data Modeling<span class="skill-sep"> &middot; </span>Change Data Capture (CDC)<span class="skill-sep"> &middot; </span>Source-to-Target Reconciliation
           </p>
         </article>
 
@@ -1533,7 +1535,7 @@
             <span class="skill-cat-count">AI &amp; Platforms</span>
           </div>
           <p class="skill-items">
-            <strong>Claude Code</strong><span class="skill-sep">&middot;</span><strong>OpenAI Codex Skills</strong><span class="skill-sep">&middot;</span>Azure OpenAI<span class="skill-sep">&middot;</span><strong>Zip (zip.com) Procurement</strong><span class="skill-sep">&middot;</span>Git<span class="skill-sep">&middot;</span>GitLab CI/CD<span class="skill-sep">&middot;</span>pytest<span class="skill-sep">&middot;</span>Alembic<span class="skill-sep">&middot;</span>SQLAlchemy<span class="skill-sep">&middot;</span>PostgreSQL<span class="skill-sep">&middot;</span>AGENTS.md<span class="skill-sep">&middot;</span>Postman<span class="skill-sep">&middot;</span>VS Code
+            <strong>Claude Code</strong><span class="skill-sep"> &middot; </span><strong>OpenAI Codex Skills</strong><span class="skill-sep"> &middot; </span>Azure OpenAI<span class="skill-sep"> &middot; </span><strong>Zip (zip.com) Procurement</strong><span class="skill-sep"> &middot; </span>Git<span class="skill-sep"> &middot; </span>GitLab CI/CD<span class="skill-sep"> &middot; </span>pytest<span class="skill-sep"> &middot; </span>Alembic<span class="skill-sep"> &middot; </span>SQLAlchemy<span class="skill-sep"> &middot; </span>PostgreSQL<span class="skill-sep"> &middot; </span>AGENTS.md<span class="skill-sep"> &middot; </span>Postman<span class="skill-sep"> &middot; </span>VS Code
           </p>
         </article>
       </div>
