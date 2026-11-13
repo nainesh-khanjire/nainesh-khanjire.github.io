@@ -1,1686 +1,533 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nainesh Khanjire — Data Engineer &amp; Consultant. Architecting reliable, metadata-driven data platforms across Microsoft Fabric, Azure Databricks, PySpark, Snowflake, and dbt for enterprise clients across the US, Middle East, and Europe." />
-  <meta name="author" content="Nainesh Khanjire" />
-  <meta name="keywords" content="Nainesh Khanjire, Data Engineer, Consultant, Microsoft Fabric, Azure Databricks, PySpark, Snowflake, dbt, Apache Airflow, Delta Lake, Medallion Architecture, OneLake, Unity Catalog, SQL, Python, CDAC ACTS" />
-  <meta property="og:title" content="Nainesh Khanjire — Data Engineer &amp; Consultant" />
-  <meta property="og:description" content="Data Engineer building reliable, metadata-driven platforms with Microsoft Fabric, Azure Databricks, PySpark, Snowflake, and dbt for clients across US, Middle East, and Europe." />
-  <meta property="og:type" content="profile" />
-  <meta property="profile:first_name" content="Nainesh" />
-  <meta property="profile:last_name" content="Khanjire" />
-  
-  <!-- Structured Schema.org JSON-LD for Recruitment Systems, ATS Parsers & AI Crawlers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Nainesh Khanjire",
-    "jobTitle": "Data Engineer / Consultant",
-    "description": "Data Engineer with 3+ years of experience architecting and delivering high-throughput data platforms across Microsoft Fabric, Azure Databricks, PySpark, SQL, Snowflake, and dbt for enterprise clients across the US, Middle East, and Europe.",
-    "email": "mailto:khanjirenainesh@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bengaluru",
-      "addressCountry": "India"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/naineshkhanjire",
-      "https://github.com/nainesh-khanjire"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Kearney Activate / Cervello India Pvt. Ltd."
-    },
-    "knowsAbout": [
-      "Microsoft Fabric",
-      "Azure Databricks",
-      "Apache Spark",
-      "PySpark",
-      "Snowflake",
-      "dbt",
-      "Apache Airflow",
-      "Delta Lake",
-      "Medallion Architecture",
-      "Unity Catalog",
-      "OneLake",
-      "SQL",
-      "Python",
-      "ETL/ELT Pipelines",
-      "Change Data Capture (CDC)",
-      "Slowly Changing Dimensions (SCD)",
-      "Data Quality Automation",
-      "Claude Code",
-      "OpenAI Codex",
-      "Zip (zip.com) Procurement Platform",
-      "Azure Data Factory"
-    ],
-    "alumniOf": [
-      {
-        "@type": "EducationalOrganization",
-        "name": "Centre for Development of Advanced Computing (CDAC ACTS)",
-        "award": "PG-Diploma in Big Data Analytics (PG-DBDA)"
-      },
-      {
-        "@type": "EducationalOrganization",
-        "name": "P.V.P. Institute of Technology",
-        "award": "Bachelor of Engineering in Chemical Engineering"
-      }
-    ],
-    "hasCredential": [
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Zip Certified",
-        "credentialCategory": "Certification",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "Zip (zip.com / ZipHQ)"
-        },
-        "url": "https://zip.com"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Generative AI Fundamentals",
-        "credentialCategory": "Certification",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "Databricks"
-        },
-        "url": "https://credentials.databricks.com/0938fb4e-a9f3-450d-9e54-f47a15cbdfe8"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "The Complete dbt (Data Build Tool): Zero to Hero",
-        "credentialCategory": "Certification",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "Udemy"
-        },
-        "url": "https://udemy.com/certificate/UC-a5a2ecf4-daf5-4ef3-9f66-6f94d704486b/"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "AI-Agents: Automation with LangChain & LLM Apps",
-        "credentialCategory": "Certification",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "Udemy"
-        },
-        "url": "https://udemy.com/certificate/UC-91b96d19-e241-4d62-80eb-56155ab782e8/"
-      }
-    ]
-  }
-  </script>
-
-  <!-- Inline Script to Prevent Flash of Unstyled Theme -->
-  <script>
-    (function() {
-      try {
-        var saved = localStorage.getItem('theme');
-        var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <title>Nainesh Khanjire — Data Engineer &amp; Consultant</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-  
-  <style>
-    :root {
-      /* Architectural Light-Table & Technical Blueprint Palette */
-      --bg-base: #F5F3ED;
-      --bg-surface: #FFFFFF;
-      --bg-elevated: #FAF9F5;
-      --bg-subtle: #F2EFE8;
-      --bg-accent-soft: #F6F1E3; /* Warm vellum tone */
-      
-      --line-grid-subtle: rgba(27, 54, 93, 0.035);
-      --line-grid-major: rgba(27, 54, 93, 0.07);
-      --line-subtle: #E5E0D5;
-      --line-card: #D9D2C4;
-      --line-strong: #C4BBB0;
-      --line-accent: #1B365D;
-      
-      --text-primary: #181B1E;
-      --text-secondary: #4A525A;
-      --text-muted: #747E89;
-
-      --brand-navy: #1B365D;
-      --brand-navy-hover: #122540;
-      --brand-navy-tint: #EEF3F8;
-      --brand-navy-border: #C4D5E5;
-      
-      --accent-warm: #8C5E1E;
-      --accent-warm-tint: #FAF5EB;
-      --accent-warm-border: #E8DCC6;
-      --accent-green: #22684B;
-      --accent-green-tint: #EEF6F2;
-      
-      --font-text: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-cond: 'IBM Plex Sans Condensed', 'IBM Plex Sans', sans-serif;
-
-      --container-width: 1560px;
-      --page-gutter: clamp(16px, 2.4vw, 36px);
-      --shadow-card: 0 1px 3px rgba(27, 54, 93, 0.04), 0 5px 18px rgba(27, 54, 93, 0.035);
-      --shadow-hover: 0 2px 6px rgba(27, 54, 93, 0.06), 0 8px 24px rgba(27, 54, 93, 0.05);
-      --header-bg: rgba(255, 255, 255, 0.94);
-    }
-
-    [data-theme="dark"] {
-      /* Refined Obsidian, Titanium & Slate Dark Mode Palette */
-      --bg-base: #090A0D;
-      --bg-surface: #111317;
-      --bg-elevated: #16181E;
-      --bg-subtle: #13151A;
-      --bg-accent-soft: #17181D;
-      
-      --line-grid-subtle: rgba(255, 255, 255, 0.012);
-      --line-grid-major: rgba(255, 255, 255, 0.024);
-      --line-subtle: #1C1E25;
-      --line-card: #232630;
-      --line-strong: #303542;
-      --line-accent: rgba(255, 255, 255, 0.15);
-      
-      --text-primary: #F3F4F6;
-      --text-secondary: #9CA3AF;
-      --text-muted: #64748B;
-
-      --brand-navy: #F3F4F6;
-      --brand-navy-hover: #FFFFFF;
-      --brand-navy-tint: rgba(255, 255, 255, 0.06);
-      --brand-navy-border: rgba(255, 255, 255, 0.12);
-      
-      --accent-warm: #D4A359;
-      --accent-warm-tint: rgba(212, 163, 89, 0.08);
-      --accent-warm-border: rgba(212, 163, 89, 0.22);
-      --accent-green: #34D399;
-      --accent-green-tint: rgba(52, 211, 153, 0.1);
-
-      --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 4px 20px rgba(0, 0, 0, 0.5);
-      --shadow-hover: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 8px 28px rgba(0, 0, 0, 0.65);
-      --header-bg: rgba(9, 10, 13, 0.85);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-base);
-      color: var(--text-primary);
-      font-family: var(--font-text);
-      font-size: 14px;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    /* Architectural Drafting Grid Background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: 
-        linear-gradient(to right, var(--line-grid-subtle) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--line-grid-subtle) 1px, transparent 1px);
-      background-size: 32px 32px;
-      z-index: 0;
-    }
-
-    /* Major Technical Datum Lines */
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: 
-        linear-gradient(to right, var(--line-grid-major) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--line-grid-major) 1px, transparent 1px);
-      background-size: 160px 160px;
-      z-index: 0;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:focus-visible {
-      outline: 2px solid var(--brand-navy);
-      outline-offset: 3px;
-    }
-
-    /* Structured Container with Wide Viewport & Responsive Margins */
-    .container {
-      width: min(calc(100% - (var(--page-gutter) * 2)), var(--container-width));
-      margin-inline: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Top Navigation Header */
-    header.site-header {
-      background: var(--header-bg);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line-card);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      box-shadow: 0 1px 4px rgba(27, 54, 93, 0.03);
-    }
-
-    .header-inner {
-      display: flex;
-      min-height: 56px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand-mark {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-
-    .brand-title {
-      font-family: var(--font-cond);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--brand-navy);
-      text-transform: uppercase;
-    }
-
-    .brand-role {
-      font-family: var(--font-cond);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 20px;
-      font-family: var(--font-cond);
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      transition: color 140ms ease;
-      position: relative;
-      padding: 4px 0;
-    }
-
-    .nav-links a:hover {
-      color: var(--brand-navy);
-    }
-
-    .nav-links a:hover::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--brand-navy);
-    }
-
-    /* Top Action Buttons (Theme Toggle & Copy) */
-    .header-actions {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Square Theme Toggle Button */
-    .btn-theme-toggle {
-      width: 29px;
-      height: 29px;
-      background: var(--bg-surface);
-      border: 1px solid var(--line-strong);
-      border-radius: 3px;
-      color: var(--brand-navy);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      transition: all 0.14s ease;
-      user-select: none;
-      box-shadow: 0 1px 2px rgba(27, 54, 93, 0.03);
-      flex-shrink: 0;
-    }
-
-    .btn-theme-toggle:hover {
-      background: var(--brand-navy);
-      color: #FFFFFF;
-      border-color: var(--brand-navy);
-      box-shadow: 0 2px 6px rgba(27, 54, 93, 0.15);
-    }
-
-    .theme-icon {
-      width: 13.5px;
-      height: 13.5px;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-      transition: transform 0.22s ease;
-    }
-
-    .btn-theme-toggle:hover .theme-icon {
-      transform: rotate(20deg);
-    }
-
-    /* Minimalist Copy Button */
-    .btn-copy {
-      font-family: var(--font-cond);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      background: var(--bg-surface);
-      border: 1px solid var(--line-strong);
-      border-radius: 3px;
-      color: var(--brand-navy);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.14s ease;
-      user-select: none;
-      box-shadow: 0 1px 2px rgba(27, 54, 93, 0.03);
-    }
-
-    .btn-copy:hover {
-      background: var(--brand-navy);
-      color: #FFFFFF;
-      border-color: var(--brand-navy);
-      box-shadow: 0 2px 6px rgba(27, 54, 93, 0.15);
-    }
-
-    .btn-copy:hover svg {
-      stroke: #FFFFFF;
-    }
-
-    .btn-copy.copied {
-      background: var(--accent-green);
-      color: #FFFFFF;
-      border-color: var(--accent-green);
-    }
-
-    .btn-copy.copied svg {
-      stroke: #FFFFFF;
-    }
-
-    .copy-icon {
-      width: 13px;
-      height: 13px;
-      stroke: var(--brand-navy);
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-      transition: stroke 0.14s ease;
-    }
-
-    /* Precision Dark Mode Component Enhancements */
-    [data-theme="dark"] .brand-title {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] h1.hero-title {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] h2.section-heading {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .section-header::after {
-      background: #4B5563;
-    }
-
-    [data-theme="dark"] .btn-contact {
-      background: #F3F4F6;
-      color: #0A0B0E;
-      border: 1px solid #FFFFFF;
-      font-weight: 600;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    }
-
-    [data-theme="dark"] .btn-contact:hover {
-      background: #FFFFFF;
-      box-shadow: 0 0 16px rgba(255, 255, 255, 0.18);
-    }
-
-    [data-theme="dark"] .btn-link,
-    [data-theme="dark"] .btn-copy,
-    [data-theme="dark"] .btn-theme-toggle {
-      background: #16181E;
-      border-color: #2D313B;
-      color: #D1D5DB;
-    }
-
-    [data-theme="dark"] .btn-link:hover,
-    [data-theme="dark"] .btn-copy:hover,
-    [data-theme="dark"] .btn-theme-toggle:hover {
-      background: #22252D;
-      border-color: #444A57;
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .btn-copy svg,
-    [data-theme="dark"] .btn-theme-toggle svg {
-      stroke: #D1D5DB;
-    }
-
-    [data-theme="dark"] .btn-copy:hover svg,
-    [data-theme="dark"] .btn-theme-toggle:hover svg {
-      stroke: #FFFFFF;
-    }
-
-    [data-theme="dark"] .btn-copy.copied {
-      background: #10B981;
-      border-color: #10B981;
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .btn-copy.copied svg {
-      stroke: #FFFFFF;
-    }
-
-    [data-theme="dark"] .meta-bar {
-      background: #111317;
-      border-color: #232630;
-      box-shadow: none;
-    }
-
-    [data-theme="dark"] .meta-cell {
-      background: #111317;
-    }
-
-    [data-theme="dark"] .meta-cell:hover {
-      background: #16181E;
-    }
-
-    [data-theme="dark"] .meta-value {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .competency-card {
-      border-top-color: #374151;
-    }
-
-    [data-theme="dark"] .competency-card h3 {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .comp-glyph {
-      stroke: #9CA3AF;
-    }
-
-    [data-theme="dark"] .comp-tag {
-      background: #111317;
-      border-color: #242730;
-      color: #9CA3AF;
-    }
-
-    [data-theme="dark"] .role-title {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .skill-category h3 {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .skill-items strong {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .skill-sep {
-      color: #374151;
-    }
-
-    [data-theme="dark"] .edu-heading {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .edu-badge-tag {
-      background: #111317;
-      border-color: #242730;
-      color: #9CA3AF;
-    }
-
-    [data-theme="dark"] .edu-arrow {
-      color: #9CA3AF;
-    }
-
-    [data-theme="dark"] a.edu-row:hover .edu-arrow {
-      color: #FFFFFF;
-    }
-
-    [data-theme="dark"] .interest-title {
-      color: #FFFFFF;
-    }
-
-    /* Main High-Density Layout */
-    main {
-      padding: 24px 0 56px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    /* Structured Drafting Content Card with Depth and Registration Ticks */
-    .content-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--line-card);
-      border-radius: 4px;
-      padding: 24px 26px;
-      position: relative;
-      box-shadow: var(--shadow-card);
-      transition: box-shadow 0.18s ease;
-    }
-
-    /* Architectural Corner Registration Crosshairs */
-    .content-card::before,
-    .content-card::after {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      pointer-events: none;
-    }
-
-    .content-card::before {
-      top: -1px;
-      left: -1px;
-      border-top: 2px solid var(--line-accent);
-      border-left: 2px solid var(--line-accent);
-    }
-
-    .content-card::after {
-      bottom: -1px;
-      right: -1px;
-      border-bottom: 2px solid var(--line-accent);
-      border-right: 2px solid var(--line-accent);
-    }
-
-    /* Architectural Top Card Metadata Bar (Subtle Datum Strip) */
-    .card-datum-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-      border-bottom: 1px dashed var(--line-subtle);
-      font-family: var(--font-cond);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .card-datum-strip .datum-id {
-      color: var(--brand-navy);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .card-datum-strip .status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent-green);
-      display: inline-block;
-    }
-
-    /* Hero Block Elements */
-    .hero-eyebrow {
-      font-family: var(--font-cond);
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent-warm);
-      margin-bottom: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    h1.hero-title {
-      font-family: var(--font-cond);
-      font-size: clamp(1.9rem, 4.4vw, 2.45rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.14;
-      color: var(--brand-navy);
-      margin-bottom: 12px;
-    }
-
-    .hero-bio {
-      font-size: 14.5px;
-      color: var(--text-secondary);
-      line-height: 1.62;
-      max-width: 96ch;
-      margin-bottom: 18px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .btn-contact {
-      font-family: var(--font-cond);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 7px 16px;
-      background: var(--brand-navy);
-      color: #FFFFFF;
-      border: 1px solid var(--brand-navy);
-      border-radius: 3px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 140ms ease;
-      box-shadow: 0 1px 3px rgba(27, 54, 93, 0.12);
-    }
-
-    .btn-contact:hover {
-      background: var(--brand-navy-hover);
-      border-color: var(--brand-navy-hover);
-      box-shadow: 0 3px 8px rgba(27, 54, 93, 0.2);
-    }
-
-    .btn-link {
-      font-family: var(--font-cond);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 7px 14px;
-      background: var(--bg-surface);
-      color: var(--text-secondary);
-      border: 1px solid var(--line-strong);
-      border-radius: 3px;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 140ms ease;
-    }
-
-    .btn-link:hover {
-      border-color: var(--brand-navy);
-      color: var(--brand-navy);
-      background: var(--brand-navy-tint);
-    }
-
-    /* Tactical KPI Metric Bar with Paper Inset Framing */
-    .meta-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--line-card);
-      border-radius: 4px;
-      background: var(--bg-elevated);
-      overflow: hidden;
-      box-shadow: inset 0 1px 2px rgba(27, 54, 93, 0.02);
-    }
-
-    @media (max-width: 720px) {
-      .meta-bar {
-        grid-template-columns: 1fr 1fr;
-      }
-      .meta-cell:nth-child(2) {
-        border-right: none !important;
-      }
-      .meta-cell:nth-child(3),
-      .meta-cell:nth-child(4) {
-        border-top: 1px solid var(--line-card);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .meta-bar {
-        grid-template-columns: 1fr;
-      }
-      .meta-cell + .meta-cell {
-        border-left: none !important;
-        border-top: 1px solid var(--line-card);
-      }
-    }
-
-    .meta-cell {
-      padding: 10px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      background: var(--bg-surface);
-      transition: background 0.12s ease;
-    }
-
-    .meta-cell + .meta-cell {
-      border-left: 1px solid var(--line-card);
-    }
-
-    .meta-cell:hover {
-      background: var(--bg-elevated);
-    }
-
-    .meta-label {
-      font-family: var(--font-cond);
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .meta-value {
-      font-family: var(--font-cond);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--brand-navy);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .meta-sub {
-      font-size: 11px;
-      color: var(--text-secondary);
-      font-weight: 400;
-    }
-
-    /* Section Headers with Technical Render Rules & Datum Marks */
-    .section-header {
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--line-subtle);
-      padding-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .section-header::after {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background: var(--brand-navy);
-    }
-
-    h2.section-heading {
-      font-family: var(--font-cond);
-      font-size: 17.5px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: var(--brand-navy);
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section-note {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      font-family: var(--font-text);
-    }
-
-    /* Architectural Competency Cards with Geometric Render Cues */
-    .competencies-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .competencies-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .competency-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--line-card);
-      border-top: 3px solid var(--brand-navy);
-      border-radius: 3px;
-      padding: 16px 16px 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .competency-card:hover {
-      background: var(--bg-surface);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .comp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2px;
-    }
-
-    .comp-index {
-      font-family: var(--font-cond);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent-warm);
-      letter-spacing: 0.05em;
-    }
-
-    .comp-glyph {
-      width: 16px;
-      height: 16px;
-      stroke: var(--brand-navy);
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      opacity: 0.85;
-    }
-
-    .competency-card h3 {
-      font-family: var(--font-cond);
-      font-size: 14.5px;
-      font-weight: 700;
-      color: var(--brand-navy);
-      letter-spacing: -0.01em;
-    }
-
-    .competency-card p {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      flex-grow: 1;
-    }
-
-    .comp-tags {
-      margin-top: 6px;
-      padding-top: 8px;
-      border-top: 1px dashed var(--line-subtle);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-
-    .comp-tag {
-      font-family: var(--font-cond);
-      font-size: 10.5px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      background: var(--bg-surface);
-      border: 1px solid var(--line-subtle);
-      padding: 1px 6px;
-      border-radius: 2px;
-      letter-spacing: 0.02em;
-    }
-
-    /* Professional Experience (Clean & Structured) */
-    .role-banner {
-      background: var(--bg-elevated);
-      border: 1px solid var(--line-card);
-      border-radius: 3px;
-      padding: 12px 16px;
-      margin-bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .role-title {
-      font-family: var(--font-cond);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--brand-navy);
-    }
-
-    .role-company {
-      font-family: var(--font-cond);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
-
-    .role-timeline-strip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .role-timeline {
-      font-family: var(--font-cond);
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--accent-warm);
-      background: var(--bg-surface);
-      padding: 2px 8px;
-      border: 1px solid var(--accent-warm-border);
-      border-radius: 2px;
-    }
-
-    .experience-summary {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .experience-summary li {
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--line-card);
-      border-radius: 3px;
-      font-size: 13.5px;
-      color: var(--text-primary);
-      line-height: 1.52;
-      align-items: baseline;
-      transition: background 0.12s ease;
-    }
-
-    .experience-summary li:hover {
-      background: var(--bg-surface);
-    }
-
-    .experience-summary .bullet-tag {
-      font-family: var(--font-cond);
-      font-weight: 700;
-      color: var(--brand-navy);
-      font-size: 13px;
-    }
-
-    /* Structured Technical Skills - Responsive 3-Col Wide / 2-Col Tablet / 1-Col Mobile */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    @media (max-width: 1080px) {
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 680px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .skill-category {
-      background: var(--bg-elevated);
-      border: 1px solid var(--line-card);
-      border-radius: 3px;
-      padding: 12px 14px;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      transition: background 0.14s ease, border-color 0.14s ease;
-    }
-
-    .skill-category:hover {
-      background: var(--bg-surface);
-      border-color: var(--line-strong);
-    }
-
-    .skill-cat-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 5px;
-      border-bottom: 1px dashed var(--line-subtle);
-    }
-
-    .skill-category h3 {
-      font-family: var(--font-cond);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--brand-navy);
-    }
-
-    .skill-cat-count {
-      font-family: var(--font-cond);
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .skill-items {
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      overflow-wrap: break-word;
-    }
-
-    .skill-items strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    .skill-sep {
-      color: var(--line-strong);
-      margin: 0 2px;
-      user-select: none;
-    }
-
-    /* Education & Certifications */
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    @media (max-width: 720px) {
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .edu-col-title {
-      font-family: var(--font-cond);
-      font-size: 11.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--accent-warm);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .edu-row {
-      background: var(--bg-elevated);
-      border: 1px solid var(--line-card);
-      border-radius: 3px;
-      padding: 10px 13px;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 140ms ease;
-    }
-
-    a.edu-row:hover {
-      background: var(--brand-navy-tint);
-      border-color: var(--brand-navy-border);
-      transform: translateX(1px);
-    }
-
-    .edu-heading {
-      font-weight: 600;
-      font-size: 13.5px;
-      color: var(--text-primary);
-    }
-
-    .edu-sub {
-      font-family: var(--font-cond);
-      font-size: 11.5px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .edu-badge-tag {
-      font-family: var(--font-cond);
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 2px 6px;
-      border-radius: 2px;
-      background: var(--bg-surface);
-      border: 1px solid var(--line-subtle);
-      color: var(--text-secondary);
-      margin-right: 6px;
-    }
-
-    .edu-arrow {
-      color: var(--brand-navy);
-      font-family: var(--font-cond);
-      font-weight: 700;
-      font-size: 13px;
-      margin-left: 8px;
-    }
-
-    /* Interests Strip */
-    .interests-row {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 8px;
-    }
-
-    @media (max-width: 760px) {
-      .interests-row {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    @media (max-width: 480px) {
-      .interests-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .interest-box {
-      background: var(--bg-elevated);
-      border: 1px solid var(--line-card);
-      border-radius: 3px;
-      padding: 8px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      transition: all 0.12s ease;
-    }
-
-    .interest-box:hover {
-      background: var(--bg-surface);
-      border-color: var(--brand-navy);
-      transform: translateY(-1px);
-    }
-
-    .interest-num {
-      font-family: var(--font-cond);
-      font-size: 9.5px;
-      font-weight: 700;
-      color: var(--accent-warm);
-      letter-spacing: 0.05em;
-    }
-
-    .interest-title {
-      font-family: var(--font-cond);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    /* Site Footer */
-    footer.site-footer {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--line-card);
-      padding: 16px 0;
-      margin-top: auto;
-      box-shadow: 0 -1px 3px rgba(27, 54, 93, 0.02);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-family: var(--font-cond);
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--text-muted);
-    }
-
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding: 16px 0 40px 0;
-        gap: 14px;
-      }
-      .content-card {
-        padding: 18px 16px;
-      }
-      .brand-role {
-        display: none;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nainesh Khanjire — Data Engineer &amp; Consultant</title>
+<meta name="description" content="Nainesh Khanjire, Data Engineer with 3+ years of experience architecting and delivering high-throughput data platforms across Microsoft Fabric, Azure Databricks, PySpark, SQL, Snowflake, and dbt for enterprise clients across the US, Middle East, and Europe.">
+<meta name="author" content="Nainesh Khanjire">
+<meta property="og:title" content="Nainesh Khanjire — Data Engineer &amp; Consultant">
+<meta property="og:description" content="Data Engineer with 3+ years across Microsoft Fabric, Azure Databricks, PySpark, SQL, Snowflake, and dbt.">
+<meta property="og:type" content="profile">
+<meta name="theme-color" content="#2c68ad">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='7' height='7' fill='%232c68ad'/%3E%3Crect x='9' width='7' height='7' fill='%23c23b26'/%3E%3Crect y='9' width='7' height='7' fill='%23ffd94a'/%3E%3Crect x='9' y='9' width='7' height='7' fill='%2317865c'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nainesh Khanjire",
+  "jobTitle": "Data Engineer / Consultant",
+  "description": "Data Engineer with 3+ years of experience architecting and delivering high-throughput data platforms across Microsoft Fabric, Azure Databricks, PySpark, SQL, Snowflake, and dbt for enterprise clients across the US, Middle East, and Europe.",
+  "email": "mailto:khanjirenainesh@gmail.com",
+  "address": {"@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "India"},
+  "sameAs": ["https://www.linkedin.com/in/naineshkhanjire", "https://github.com/nainesh-khanjire"],
+  "worksFor": {"@type": "Organization", "name": "Kearney Activate / Cervello India Pvt. Ltd."},
+  "knowsAbout": ["Microsoft Fabric", "Azure Databricks", "Apache Spark", "PySpark", "Snowflake", "dbt", "Apache Airflow", "Delta Lake", "Medallion Architecture", "Unity Catalog", "OneLake", "SQL", "Python", "ETL/ELT Pipelines", "Change Data Capture (CDC)", "Slowly Changing Dimensions (SCD)", "Data Quality Automation", "Claude Code", "OpenAI Codex", "Zip (zip.com) Procurement Platform", "Azure Data Factory"],
+  "alumniOf": [
+    {"@type": "EducationalOrganization", "name": "Centre for Development of Advanced Computing (CDAC ACTS)", "award": "PG-Diploma in Big Data Analytics (PG-DBDA)"},
+    {"@type": "EducationalOrganization", "name": "P.V.P. Institute of Technology", "award": "Bachelor of Engineering in Chemical Engineering"}
+  ],
+  "hasCredential": [
+    {"@type": "EducationalOccupationalCredential", "name": "Zip Certified", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Zip (zip.com / ZipHQ)"}, "url": "https://zip.com"},
+    {"@type": "EducationalOccupationalCredential", "name": "Generative AI Fundamentals", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Databricks"}, "url": "https://credentials.databricks.com/0938fb4e-a9f3-450d-9e54-f47a15cbdfe8"},
+    {"@type": "EducationalOccupationalCredential", "name": "The Complete dbt (Data Build Tool): Zero to Hero", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Udemy"}, "url": "https://udemy.com/certificate/UC-a5a2ecf4-daf5-4ef3-9f66-6f94d704486b/"},
+    {"@type": "EducationalOccupationalCredential", "name": "AI-Agents: Automation with LangChain & LLM Apps", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Udemy"}, "url": "https://udemy.com/certificate/UC-91b96d19-e241-4d62-80eb-56155ab782e8/"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script>
+(function(){var t;try{t=localStorage.getItem('pf-theme');}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<style>
+/* ===== Tokens: data-lab canvas palette ===== */
+:root{
+  color-scheme:light;
+  --head:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg-base:#e7ebf1; --bg-surface:#ffffff; --bg-elevated:#f7f9fc; --bg-subtle:#e2e7ee;
+  --line-subtle:#d6dce5; --line-card:#c3cbd7; --line-strong:#8f9bad;
+  --ink:#121a25; --secondary:#2f3a49; --muted:#4b5668; --grid:#c4ccd7;
+  --wire:#2c68ad; --wire-soft:#e3ecf7;
+  --pen:#c23b26; --pen-soft:#fbe6e1;
+  --field:#fbf1bf; --field-ink:#5f4f00;
+  --sticky:#ffd94a; --sticky-ink:#2b2400;
+  --mint:#17865c; --mint-soft:#dcf3e8;
+  --grape:#7246b8; --grape-soft:#eee6fa;
+  --coral:#c4532a; --coral-soft:#fde9df;
+  --teal:#0e7c86; --teal-soft:#dbf1f3;
+  --warm:#8a5a00; --warm-soft:#fdf4d3;
+  --on-hue:#ffffff;
+  --offset:4px 4px 0;
+  --gutter:clamp(10px,1.6vw,24px);
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --bg-base:#0f1318; --bg-surface:#1c232d; --bg-elevated:#212a36; --bg-subtle:#19202a;
+  --line-subtle:#2c3644; --line-card:#3a4555; --line-strong:#56647c;
+  --ink:#eef2f6; --secondary:#c3ccd8; --muted:#adb7c4; --grid:#2a3340;
+  --wire:#82b3e8; --wire-soft:#1d2d40;
+  --pen:#f0806b; --pen-soft:#3a201c;
+  --field:#3b3519; --field-ink:#efdc8c;
+  --sticky:#e6bf36; --sticky-ink:#241d00;
+  --mint:#6fdaa8; --mint-soft:#15302a;
+  --grape:#b9a0f0; --grape-soft:#2a2140;
+  --coral:#f2a07e; --coral-soft:#3a251c;
+  --teal:#6fd0d8; --teal-soft:#15303a;
+  --warm:#efd27a; --warm-soft:#3b3519;
+  --on-hue:#0d1622;
+}
+/* hue helpers */
+.h-wire{--hue:var(--wire);--hue-soft:var(--wire-soft)}
+.h-pen{--hue:var(--pen);--hue-soft:var(--pen-soft)}
+.h-mint{--hue:var(--mint);--hue-soft:var(--mint-soft)}
+.h-grape{--hue:var(--grape);--hue-soft:var(--grape-soft)}
+.h-coral{--hue:var(--coral);--hue-soft:var(--coral-soft)}
+.h-teal{--hue:var(--teal);--hue-soft:var(--teal-soft)}
+.h-warm{--hue:var(--warm);--hue-soft:var(--warm-soft)}
+.h-sticky{--hue:var(--sticky);--hue-soft:var(--field)}
+
+/* ===== Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg-base);color:var(--ink);font:400 15.5px/1.55 var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(var(--grid) 1px,transparent 1.3px);background-size:20px 20px;opacity:.8}
+::selection{background:var(--sticky);color:var(--sticky-ink)}
+h1,h2,h3,button,input,.kbd{font-family:var(--head)}
+h1,h2,h3{text-wrap:balance}
+a{color:inherit}
+strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--wire);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;z-index:300;background:var(--sticky);color:var(--sticky-ink);padding:8px 12px;font-weight:600;font-family:var(--head)}
+.skip:focus{left:8px}
+.wrap{width:calc(100% - 2*var(--gutter));max-width:1720px;margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.kbd{display:inline-block;min-width:20px;padding:0 5px;border:1px solid var(--line-strong);border-bottom-width:2px;font-size:12.5px;font-weight:600;line-height:18px;text-align:center;color:var(--secondary);background:var(--bg-elevated)}
+
+.reading-progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:120;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--wire),var(--grape),var(--pen),var(--sticky));pointer-events:none}
+
+/* ===== Header ===== */
+.site-header{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg-surface) 82%,transparent);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line-card)}
+.bar{display:flex;align-items:center;gap:14px;min-height:56px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
+.brand-icon{width:30px;height:30px;flex:none;display:grid;place-items:center;color:#fff;font:700 14px/1 var(--head);background:conic-gradient(from 210deg,var(--wire),var(--grape),var(--pen),var(--sticky),var(--wire));box-shadow:0 6px 16px -8px var(--wire);transition:transform .4s cubic-bezier(.2,1.6,.4,1)}
+.brand:hover .brand-icon{transform:rotate(-12deg) scale(1.08)}
+.brand-icon.spin{animation:spin .7s cubic-bezier(.2,1.3,.4,1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.brand-text{font:700 17px/1.1 var(--head);white-space:nowrap}
+.brand-text strong{color:var(--pen)}
+.brand-text small{display:block;font:500 12.5px/1.2 var(--body);color:var(--muted)}
+.tabs{display:flex;gap:2px;list-style:none}
+.tab{position:relative;display:flex;align-items:center;gap:7px;padding:7px 11px;text-decoration:none;font:600 14.5px/1 var(--head);color:var(--secondary);border-bottom:2px solid transparent;transition:color .15s,background .15s;white-space:nowrap}
+.tab::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hue);box-shadow:0 0 0 3px var(--hue-soft);flex:none}
+.tab:hover{color:var(--hue);background:var(--hue-soft)}
+.tab:hover::before{animation:dot-pulse .7s ease}
+.tab.active{color:var(--hue);background:var(--hue-soft);border-bottom-color:var(--hue)}
+.tab.active::before{animation:dot-breathe 2.4s ease-in-out infinite}
+@keyframes dot-pulse{50%{transform:scale(1.7)}}
+@keyframes dot-breathe{50%{box-shadow:0 0 0 6px var(--hue-soft)}}
+.tools{display:flex;gap:6px;flex:none}
+.icon-btn{position:relative;overflow:hidden;height:36px;min-width:36px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line-card);background:var(--bg-surface);color:var(--ink);font:600 14px/1 var(--head);cursor:pointer;transition:transform .18s cubic-bezier(.2,1.4,.4,1),background .15s,border-color .15s}
+.icon-btn:hover{border-color:var(--ink);background:var(--bg-elevated)}
+.icon-btn:active{transform:scale(.95)}
+.icon-btn.ok{background:var(--mint);border-color:var(--mint);color:var(--on-hue)}
+.icon-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#themeBtn svg{transition:transform .5s cubic-bezier(.2,1.4,.4,1)}
+#themeBtn:hover svg{transform:rotate(40deg)}
+@media (max-width:1000px){
+  .bar{flex-wrap:wrap;row-gap:0}
+  .tabs-nav{order:3;width:calc(100% + 2*var(--gutter));margin:0 calc(-1*var(--gutter));padding:3px var(--gutter);overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--line-subtle)}
+  .tabs-nav::-webkit-scrollbar{display:none}
+}
+@media (max-width:460px){.copy-label,.brand-text small{display:none}}
+
+/* ===== Surfaces ===== */
+.surface{background:var(--bg-surface);border:1px solid var(--line-card);position:relative}
+.lift{transition:transform .2s cubic-bezier(.2,.9,.3,1.2),box-shadow .2s,border-color .15s}
+.lift:hover{border-color:var(--ink);box-shadow:var(--offset) var(--hue,var(--ink));transform:translate(-2px,-2px)}
+.sweep{overflow:hidden;isolation:isolate}
+.sweep::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--hue,var(--wire));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.9,.3,1)}
+.sweep:hover::after{transform:scaleX(1)}
+.spot::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .25s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),var(--hue-soft),transparent 70%)}
+.spot:hover::before{opacity:1}
+
+/* ===== Section heads ===== */
+section{padding:28px 0 4px}
+.sec-strip{display:flex;justify-content:space-between;gap:4px 16px;flex-wrap:wrap;align-items:center;padding-bottom:6px;margin-bottom:10px;border-bottom:1px dashed var(--line-strong);font:600 13.5px/1.3 var(--head);color:var(--muted)}
+.sec-strip .sid{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.sec-strip .sid::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hue);box-shadow:0 0 0 3px var(--hue-soft)}
+.sec-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 16px;margin-bottom:12px}
+h2{font-size:clamp(26px,3vw,36px);line-height:1.05;letter-spacing:-.01em}
+.sec-head p{color:var(--muted)}
+
+/* ===== Hero ===== */
+.hero{padding-top:14px}
+.hub{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,500px);gap:14px 28px;padding:clamp(14px,2.2vw,28px);background:var(--bg-surface);border:1px solid var(--line-card);box-shadow:var(--offset) color-mix(in srgb,var(--ink) 10%,transparent)}
+@media (max-width:980px){.hub{grid-template-columns:1fr}}
+.hub-left{display:flex;flex-direction:column;gap:12px;min-width:0}
+.badge-row{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font:600 14px/1.3 var(--head);color:var(--muted)}
+.live{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;background:var(--mint-soft);color:var(--ink)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--mint);animation:live 1.8s infinite}
+@keyframes live{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--mint) 25%,transparent)}}
+.eyebrow{font:600 16px/1.2 var(--head);color:var(--grape)}
+h1{font-size:clamp(36px,5.4vw,74px);line-height:.98;letter-spacing:-.018em;font-weight:700}
+h1 .w{display:inline-block;transition:transform .2s,color .2s}
+h1 .w:hover{transform:translateY(-5px) rotate(-3deg);color:var(--c)}
+h1 .hl{display:inline-block;background:var(--sticky);color:var(--sticky-ink);padding:0 .12em;transform:rotate(-1.5deg);box-shadow:0 10px 18px -12px rgb(0 0 0 / 45%)}
+.bio{color:var(--secondary);max-width:80ch}
+.bio strong{color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--ink);background:var(--bg-surface);color:var(--ink);font:600 15px/1.2 var(--head);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s;overflow-wrap:anywhere}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:var(--offset) var(--ink)}
+.btn:active{transform:translate(0,0);box-shadow:none}
+.btn.primary{background:var(--wire);border-color:var(--wire);color:var(--on-hue)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* hero right: tabbed panel */
+.hub-right{display:flex;flex-direction:column;min-width:0}
+.ppanel{flex:1;display:flex;flex-direction:column;justify-content:center}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (min-width:620px) and (max-width:980px){.metrics{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.metric{padding:16px 18px;background:var(--hue-soft);display:flex;flex-direction:column;gap:2px;transition:transform .2s}
+.metric > span{font:600 13.5px/1.2 var(--head);color:var(--muted)}
+.metric b{font:700 clamp(21px,1.9vw,28px)/1.15 var(--head);color:var(--hue);font-variant-numeric:tabular-nums}
+.metric:hover{transform:translateY(-3px) rotate(-1deg)}
+.metric:hover b{animation:hop .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes hop{40%{transform:translateY(-5px)}}
+
+/* medallion track */
+.track{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px;align-items:center;padding:10px 14px;background:var(--bg-elevated);border:1px solid var(--line-card)}
+.track-head{display:flex;flex-direction:column;gap:6px}
+.track-title{font:700 16px/1.2 var(--head)}
+.track-stats{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.track-stats strong{color:var(--ink)}
+.lane{position:relative;display:flex;justify-content:space-between;align-items:center;height:42px;background:linear-gradient(var(--line-strong),var(--line-strong)) center/calc(100% - 80px) 2px no-repeat}
+.node{position:relative;z-index:1;min-width:76px;text-align:center;padding:6px 10px;font:600 14px/1 var(--head);border:1px solid var(--ink);background:var(--bg-surface)}
+.node.b{background:var(--coral-soft)}.node.s{background:var(--wire-soft)}.node.g{background:var(--field);color:var(--field-ink)}
+.node.hit{animation:hit .3s ease}
+@keyframes hit{50%{transform:translateY(-4px)}}
+.pkt{position:absolute;left:30px;top:50%;width:10px;height:10px;margin-top:-5px;z-index:2;pointer-events:none}
+@media (max-width:640px){.track{grid-template-columns:1fr}.node{min-width:0;padding:6px 8px;font-size:13px}}
+
+/* ===== Competencies ===== */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.grid3{grid-template-columns:1fr}}
+.comp{padding:14px 16px;border-top:4px solid var(--hue);display:flex;flex-direction:column;gap:6px}
+.comp-top{display:flex;justify-content:space-between;align-items:center;font:700 13.5px/1 var(--head);color:var(--hue)}
+.icon-frame{width:32px;height:32px;display:grid;place-items:center;background:var(--hue-soft);color:var(--hue);transition:transform .25s}
+.icon-frame svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.comp:hover .icon-frame{transform:rotate(-8deg) scale(1.1)}
+.comp:hover .icon-frame svg{animation:wiggle .5s ease}
+@keyframes wiggle{25%{transform:rotate(-12deg)}60%{transform:rotate(9deg)}}
+.comp h3{font-size:21px;line-height:1.15}
+.comp p{color:var(--secondary);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:4px;list-style:none}
+.tag{font:600 13.5px/1.3 var(--head);padding:2px 8px;background:var(--hue-soft);color:var(--ink)}
+
+/* ===== Experience ===== */
+.role{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 22px;padding:14px 18px;border-left:4px solid var(--grape)}
+.role h3{font-size:24px;line-height:1.15}
+.role .co{font:600 17px/1.3 var(--head);color:var(--grape)}
+.sticky{grid-row:span 2;align-self:start;background:var(--sticky);color:var(--sticky-ink);padding:9px 14px;font:700 15.5px/1.3 var(--head);transform:rotate(2deg);box-shadow:0 10px 18px -10px rgb(0 0 0 / 45%);animation:sway 6s ease-in-out infinite}
+.sticky span{display:block;font-weight:500}
+@keyframes sway{0%,100%{transform:rotate(2deg)}50%{transform:rotate(.5deg) translateY(-2px)}}
+.role ul{grid-column:1/-1;list-style:none;display:grid;gap:6px;margin-top:6px}
+.role li{position:relative;padding-left:22px;color:var(--secondary)}
+.role li strong{color:var(--ink)}
+.role li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:11px;background:var(--hue)}
+@media (max-width:640px){.role{grid-template-columns:1fr}.sticky{grid-row:auto;justify-self:start}}
+
+/* ===== Skills ===== */
+.skill-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
+.fbtn{padding:6px 11px;border:1px solid var(--line-card);background:var(--bg-surface);color:var(--ink);font:600 14px/1 var(--head);cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .15s,border-color .15s}
+.fbtn::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--hue,var(--ink))}
+.fbtn:hover{border-color:var(--ink)}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg-surface);border-color:var(--ink)}
+.fbtn[aria-pressed="true"]::before{background:var(--hue,var(--bg-surface))}
+.search{flex:1 1 240px;max-width:380px;margin-left:auto;display:flex;align-items:center;gap:6px;padding-right:6px;border:1px solid var(--line-card);background:var(--bg-elevated);transition:box-shadow .2s,border-color .2s}
+.search:focus-within{box-shadow:0 0 0 4px var(--wire-soft);border-color:var(--wire)}
+.search svg{width:16px;height:16px;margin-left:10px;fill:none;stroke:var(--muted);stroke-width:2;flex:none}
+.search input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:400 15px/1 var(--body);padding:8px 4px}
+.search input:focus{outline:none}
+.count{font:600 13.5px/1 var(--head);color:var(--muted);min-width:10ch;font-variant-numeric:tabular-nums}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:1100px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.skills{grid-template-columns:1fr}}
+.skill-cat{padding:12px 14px;border-top:4px solid var(--hue);transition:opacity .25s,transform .2s,box-shadow .2s,border-color .15s}
+.skill-cat.dim{opacity:.28}
+.skill-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 10px;margin-bottom:8px}
+.skill-head h3{font-size:18px;line-height:1.2}
+.skill-head span{font:700 13.5px/1.2 var(--head);color:var(--hue)}
+.chips{display:flex;flex-wrap:wrap;gap:5px;list-style:none}
+.chip{font-size:14px;padding:3px 9px;border:1px solid var(--line-subtle);background:var(--bg-elevated);transition:transform .15s,background .15s,color .15s,opacity .2s,border-color .15s}
+.chip.key{font-weight:600;border-color:var(--hue);background:var(--hue-soft)}
+.chip:hover,.chip.hit{transform:translateY(-2px) rotate(-1.5deg);background:var(--hue);border-color:var(--hue);color:var(--on-hue)}
+.chip.miss{opacity:.3}
+
+/* ===== Education ===== */
+.edu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:12px}
+@media (max-width:900px){.edu{grid-template-columns:1fr}}
+.col{padding:12px 16px}
+.col h3{font-size:19px;padding-bottom:4px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--line-subtle);text-decoration:none}
+.row b{font:600 17px/1.25 var(--head)}
+.row small{font-size:14px;color:var(--muted)}
+.badge{display:inline-block;margin-right:6px;padding:0 6px;font:700 13px/1.5 var(--head);background:var(--hue-soft);color:var(--hue);border-left:3px solid var(--hue)}
+a.row b{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .25s,color .15s;display:inline}
+a.row:hover b{background-size:100% 1px;color:var(--wire)}
+a.row .arrow{flex:none;font-size:19px;color:var(--wire);transition:transform .2s}
+a.row:hover .arrow{transform:translate(4px,-4px)}
+
+/* ===== Interests ===== */
+.interests{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;list-style:none}
+@media (max-width:900px){.interests{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:420px){.interests{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.interest{display:flex;align-items:baseline;gap:8px;padding:10px 12px;background:var(--hue-soft);border-left:4px solid var(--hue);font-family:var(--head);transition:transform .2s cubic-bezier(.2,1.6,.4,1)}
+.interest:hover{transform:translateY(-3px) rotate(-1deg)}
+.interest .n{font-size:13.5px;font-weight:600;color:var(--hue);font-variant-numeric:tabular-nums}
+.interest .t{font-size:18px;font-weight:700;line-height:1.15}
+
+/* ===== Footer ===== */
+footer{margin-top:32px;border-top:1px dashed var(--line-strong);background:var(--bg-surface)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 18px;padding:14px 0;font:600 14px/1.4 var(--head);color:var(--muted)}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--wire)}
+
+/* ===== Effects ===== */
+.ripple{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;pointer-events:none;background:currentColor;opacity:.28;transform:rotate(45deg) scale(0);animation:ripple .6s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes ripple{to{transform:rotate(45deg) scale(28);opacity:0}}
+.confetti-layer{position:fixed;inset:0;pointer-events:none;z-index:200}
+.confetti-layer i{position:absolute;width:8px;height:12px;animation:confetti 1.2s cubic-bezier(.15,.7,.4,1) forwards}
+@keyframes confetti{to{transform:translate(var(--dx),calc(var(--dy) + 240px)) rotate(var(--rot));opacity:0}}
+#toast{position:fixed;left:50%;bottom:18px;z-index:210;transform:translate(-50%,140px);max-width:calc(100% - 24px);padding:9px 16px;background:var(--ink);color:var(--bg-surface);font:600 15px/1.3 var(--head);transition:transform .3s cubic-bezier(.2,1.2,.4,1)}
+#toast.show{transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .lift:hover,.metric:hover,.interest:hover{transform:none}
+}
+@media print{
+  body::before,.site-header,.reading-progress,.track,.skill-tools,#toast{display:none!important}
+}
+</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="reading-progress" id="progress" aria-hidden="true"></div>
 
-  <!-- TOP NAVIGATION HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand-mark" href="#top">
-        <span class="brand-title">Nainesh Khanjire</span>
-        <span class="brand-role">Data Engineer &amp; Consultant</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#competencies">Competencies</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-      </nav>
-
-      <!-- Header Actions: Theme Toggle (Square Button) & Copy Markdown -->
-      <div class="header-actions">
-        <button type="button" class="btn-theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle dark/light mode">
-          <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-
-        <button type="button" class="btn-copy" id="copyBtn" onclick="copyPageAsMarkdown()" title="Copy entire profile as clean Markdown for notes or recruiting systems">
-          <svg class="copy-icon" id="copyIcon" viewBox="0 0 24 24">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          <span id="copyText">Copy</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- MAIN VIEWPORT (Annotated with Schema.org Microdata for ATS & AI Parsers) -->
-  <main class="container" id="top" itemscope itemtype="https://schema.org/Person">
-    <meta itemprop="name" content="Nainesh Khanjire" />
-    <meta itemprop="jobTitle" content="Data Engineer / Consultant" />
-    <meta itemprop="email" content="khanjirenainesh@gmail.com" />
-    <meta itemprop="address" content="Bengaluru, India" />
-
-    <!-- HERO PROFILE CARD -->
-    <section class="content-card">
-      <div class="card-datum-strip">
-        <span class="datum-id"><span class="status-dot"></span> Available for Consulting Engagements</span>
-        <span>Bengaluru, India</span>
-      </div>
-
-      <p class="hero-eyebrow">Data Engineering &amp; Platform Architecture</p>
-      <h1 class="hero-title">Data platforms, designed to keep moving.</h1>
-      
-      <p class="hero-bio">
-        Data Engineer with 3+ years of experience architecting and delivering high-throughput data platforms across Microsoft Fabric, Azure Databricks, PySpark, SQL, Snowflake, and dbt. Hands-on delivery for enterprise consulting clients across the <strong>United States, Middle East, and Europe</strong>—specializing in Medallion Lakehouses, automated quality frameworks, and AI-assisted engineering with Claude Code and OpenAI Codex.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn-contact" href="mailto:khanjirenainesh@gmail.com">khanjirenainesh@gmail.com</a>
-        <a class="btn-link" href="https://www.linkedin.com/in/naineshkhanjire" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
-        <a class="btn-link" href="https://github.com/nainesh-khanjire" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
-      </div>
-
-      <div class="meta-bar">
-        <div class="meta-cell">
-          <span class="meta-label">Experience</span>
-          <span class="meta-value">3+ Years</span>
-        </div>
-        <div class="meta-cell">
-          <span class="meta-label">Client Footprint</span>
-          <span class="meta-value">US &middot; ME &middot; Europe</span>
-        </div>
-        <div class="meta-cell">
-          <span class="meta-label">Location Base</span>
-          <span class="meta-value">Bengaluru, India</span>
-        </div>
-        <div class="meta-cell">
-          <span class="meta-label">Core Focus</span>
-          <span class="meta-value">Lakehouse &amp; ELT</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CORE COMPETENCIES -->
-    <section class="content-card" id="competencies">
-      <div class="card-datum-strip">
-        <span class="datum-id">Section 01 // Architectural Focus</span>
-        <span>Patterns &middot; Lakehouse &middot; Observability</span>
-      </div>
-
-      <div class="section-header">
-        <h2 class="section-heading">Core Competencies</h2>
-        <span class="section-note">Engineering patterns for high-throughput, enterprise data platforms.</span>
-      </div>
-
-      <div class="competencies-grid">
-        <article class="competency-card">
-          <div class="comp-header">
-            <span class="comp-index">COMPETENCY 01</span>
-            <svg class="comp-glyph" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-          </div>
-          <h3>Pipeline Orchestration</h3>
-          <p>Frameworks scaling across hundreds of tables. Parameterized notebooks, dynamic pipeline configs, and dependency-aware Airflow DAGs.</p>
-          <div class="comp-tags">
-            <span class="comp-tag">Dynamic Orchestration</span>
-            <span class="comp-tag">Airflow DAGs</span>
-            <span class="comp-tag">CI/CD Automation</span>
-          </div>
-        </article>
-
-        <article class="competency-card">
-          <div class="comp-header">
-            <span class="comp-index">COMPETENCY 02</span>
-            <svg class="comp-glyph" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-          </div>
-          <h3>Lakehouse Architecture</h3>
-          <p>Medallion data architecture (Bronze, Silver, Gold), change-only Delta MERGE operations, surrogate hashing, deterministic deduplication, and SCD Type 1/2.</p>
-          <div class="comp-tags">
-            <span class="comp-tag">Medallion Design</span>
-            <span class="comp-tag">Delta Lake</span>
-            <span class="comp-tag">SCD Type 1/2</span>
-          </div>
-        </article>
-
-        <article class="competency-card">
-          <div class="comp-header">
-            <span class="comp-index">COMPETENCY 03</span>
-            <svg class="comp-glyph" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-          </div>
-          <h3>Data Quality &amp; Observability</h3>
-          <p>Reusable profiling and validation frameworks, column inventory, automated Snowflake Cortex anomaly detection, execution telemetry, and reconciliation.</p>
-          <div class="comp-tags">
-            <span class="comp-tag">Snowflake Cortex</span>
-            <span class="comp-tag">Reconciliation</span>
-            <span class="comp-tag">Validation Rules</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROFESSIONAL EXPERIENCE (CONCISE 3-LINE HIGH-LEVEL SUMMARY) -->
-    <section class="content-card" id="experience">
-      <div class="card-datum-strip">
-        <span class="datum-id">Section 02 // Engagement History</span>
-        <span>Enterprise Consulting &middot; Delivery</span>
-      </div>
-
-      <div class="section-header">
-        <h2 class="section-heading">Professional Experience</h2>
-        <span class="section-note">Enterprise platform delivery and consulting engagements.</span>
-      </div>
-
-      <div class="role-banner">
-        <div>
-          <div class="role-title">Data Engineer / Consultant</div>
-          <div class="role-company">Kearney Activate &middot; Cervello India Pvt. Ltd.</div>
-        </div>
-        <div class="role-timeline-strip">
-          <span class="role-timeline">Jun 2023 &ndash; Present &middot; Bengaluru, India</span>
-        </div>
-      </div>
-
-      <ul class="experience-summary">
-        <li>
-          <span class="bullet-tag">&bull;</span>
-          <span>Architect and deliver enterprise data platforms across <strong>Microsoft Fabric</strong>, <strong>Azure Databricks</strong>, <strong>Snowflake</strong>, <strong>dbt</strong>, and <strong>Airflow</strong> for global clients.</span>
-        </li>
-        <li>
-          <span class="bullet-tag">&bull;</span>
-          <span>Engineer scalable lakehouse pipelines across a <strong>300+ table Medallion architecture</strong> with deterministic Delta operations and automated data quality checks.</span>
-        </li>
-        <li>
-          <span class="bullet-tag">&bull;</span>
-          <span>Drive execution reliability and rapid delivery through PySpark optimization, robust DAG scheduling, and developer workflows using <strong>Claude Code</strong> and <strong>OpenAI Codex</strong>.</span>
-        </li>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" id="brand" aria-label="Nainesh Khanjire, back to top">
+      <span class="brand-icon" aria-hidden="true">NK</span>
+      <span class="brand-text">Nainesh <strong>Khanjire</strong><small>Data Engineer &amp; Consultant</small></span>
+    </a>
+    <nav class="tabs-nav" aria-label="Primary">
+      <ul class="tabs">
+        <li><a class="tab h-pen" href="#competencies">Competencies</a></li>
+        <li><a class="tab h-grape" href="#experience">Experience</a></li>
+        <li><a class="tab h-mint" href="#skills">Skills</a></li>
+        <li><a class="tab h-coral" href="#education">Education</a></li>
+        <li><a class="tab h-warm" href="#interests">Interests</a></li>
       </ul>
-    </section>
-
-    <!-- TECHNICAL SKILLS (STRUCTURED SPECIFICATIONS WITH AI-FRIENDLY DELIMITERS) -->
-    <section class="content-card" id="skills">
-      <div class="card-datum-strip">
-        <span class="datum-id">Section 03 // Technical Stack</span>
-        <span>Production Verified Tools &middot; 6 Categories</span>
-      </div>
-
-      <div class="section-header">
-        <h2 class="section-heading">Technical Skills</h2>
-        <span class="section-note">Practical, production-tested tools and frameworks.</span>
-      </div>
-
-      <div class="skills-grid">
-        <article class="skill-category">
-          <div class="skill-cat-header">
-            <h3>Programming Languages</h3>
-            <span class="skill-cat-count">Core</span>
-          </div>
-          <p class="skill-items">
-            <strong>Python</strong><span class="skill-sep"> &middot; </span><strong>SQL</strong>
-          </p>
-        </article>
-
-        <article class="skill-category">
-          <div class="skill-cat-header">
-            <h3>Microsoft Data Platform</h3>
-            <span class="skill-cat-count">Fabric &amp; Azure</span>
-          </div>
-          <p class="skill-items">
-            <strong>Microsoft Fabric</strong><span class="skill-sep"> &middot; </span>OneLake<span class="skill-sep"> &middot; </span>Fabric Lakehouse<span class="skill-sep"> &middot; </span>Fabric Data Factory<span class="skill-sep"> &middot; </span>Azure Data Factory<span class="skill-sep"> &middot; </span>ADLS Gen2<span class="skill-sep"> &middot; </span><strong>Azure Databricks</strong>
-          </p>
-        </article>
-
-        <article class="skill-category">
-          <div class="skill-cat-header">
-            <h3>Big Data &amp; Distributed Compute</h3>
-            <span class="skill-cat-count">Spark &amp; Delta</span>
-          </div>
-          <p class="skill-items">
-            <strong>Apache Spark</strong><span class="skill-sep"> &middot; </span><strong>PySpark DataFrames</strong><span class="skill-sep"> &middot; </span>Spark SQL<span class="skill-sep"> &middot; </span><strong>Delta Lake</strong><span class="skill-sep"> &middot; </span>Medallion Architecture<span class="skill-sep"> &middot; </span>Unity Catalog<span class="skill-sep"> &middot; </span>Databricks Workflows<span class="skill-sep"> &middot; </span>Incremental Processing<span class="skill-sep"> &middot; </span>SCD Type 1/2
-          </p>
-        </article>
-
-        <article class="skill-category">
-          <div class="skill-cat-header">
-            <h3>Modern Data Warehouse &amp; Transformation</h3>
-            <span class="skill-cat-count">Snowflake &amp; dbt</span>
-          </div>
-          <p class="skill-items">
-            <strong>Snowflake</strong><span class="skill-sep"> &middot; </span>Snowflake Cortex<span class="skill-sep"> &middot; </span><strong>dbt Core / Cloud</strong><span class="skill-sep"> &middot; </span>Incremental Models<span class="skill-sep"> &middot; </span>Materialized Views<span class="skill-sep"> &middot; </span>Schema &amp; Custom Tests<span class="skill-sep"> &middot; </span>dbt Packages<span class="skill-sep"> &middot; </span><strong>Apache Airflow</strong>
-          </p>
-        </article>
-
-        <article class="skill-category">
-          <div class="skill-cat-header">
-            <h3>Core Engineering &amp; Lifecycle</h3>
-            <span class="skill-cat-count">Architecture</span>
-          </div>
-          <p class="skill-items">
-            <strong>ETL / ELT Architecture</strong><span class="skill-sep"> &middot; </span>Metadata-Driven Pipelines<span class="skill-sep"> &middot; </span>Dimensional Data Modeling<span class="skill-sep"> &middot; </span>Change Data Capture (CDC)<span class="skill-sep"> &middot; </span>Source-to-Target Reconciliation
-          </p>
-        </article>
-
-        <article class="skill-category">
-          <div class="skill-cat-header">
-            <h3>Developer Tooling &amp; Enterprise Systems</h3>
-            <span class="skill-cat-count">AI &amp; Platforms</span>
-          </div>
-          <p class="skill-items">
-            <strong>Claude Code</strong><span class="skill-sep"> &middot; </span><strong>OpenAI Codex Skills</strong><span class="skill-sep"> &middot; </span>Azure OpenAI<span class="skill-sep"> &middot; </span><strong>Zip (zip.com) Procurement</strong><span class="skill-sep"> &middot; </span>Git<span class="skill-sep"> &middot; </span>GitLab CI/CD<span class="skill-sep"> &middot; </span>pytest<span class="skill-sep"> &middot; </span>Alembic<span class="skill-sep"> &middot; </span>SQLAlchemy<span class="skill-sep"> &middot; </span>PostgreSQL<span class="skill-sep"> &middot; </span>AGENTS.md<span class="skill-sep"> &middot; </span>Postman<span class="skill-sep"> &middot; </span>VS Code
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- EDUCATION & CERTIFICATIONS -->
-    <section class="content-card" id="education">
-      <div class="card-datum-strip">
-        <span class="datum-id">Section 04 // Credentials</span>
-        <span>Degrees &middot; Professional Certifications</span>
-      </div>
-
-      <div class="section-header">
-        <h2 class="section-heading">Education &amp; Certifications</h2>
-        <span class="section-note">Academic foundation and verified professional qualifications.</span>
-      </div>
-
-      <div class="education-grid">
-        <div>
-          <div class="edu-col-title">Education</div>
-          <div class="edu-list">
-            <div class="edu-row">
-              <div>
-                <div class="edu-heading">PG-Diploma in Big Data Analytics (PG-DBDA)</div>
-                <div class="edu-sub"><span class="edu-badge-tag">CDAC ACTS</span>Bengaluru &middot; 2022&ndash;2023</div>
-              </div>
-            </div>
-            <div class="edu-row">
-              <div>
-                <div class="edu-heading">Bachelor of Engineering in Chemical Engineering</div>
-                <div class="edu-sub"><span class="edu-badge-tag">Degree</span>P.V.P. Institute of Technology &middot; Maharashtra &middot; 2015&ndash;2019</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="edu-col-title">Certifications &amp; Recognition</div>
-          <div class="edu-list">
-            <a class="edu-row" href="https://zip.com/" target="_blank" rel="noopener noreferrer">
-              <div>
-                <div class="edu-heading">Zip Certified</div>
-                <div class="edu-sub"><span class="edu-badge-tag">ZipHQ</span>Procurement Platform &middot; zip.com</div>
-              </div>
-              <span class="edu-arrow">&nearr;</span>
-            </a>
-            <div class="edu-row">
-              <div>
-                <div class="edu-heading">Newest Team Player Award</div>
-                <div class="edu-sub"><span class="edu-badge-tag">Honors</span>Data Engineering Team &middot; Kearney Activate / Cervello India</div>
-              </div>
-            </div>
-            <a class="edu-row" href="https://credentials.databricks.com/0938fb4e-a9f3-450d-9e54-f47a15cbdfe8?trk=public_profile_see-credential" target="_blank" rel="noopener noreferrer">
-              <div>
-                <div class="edu-heading">Generative AI Fundamentals</div>
-                <div class="edu-sub"><span class="edu-badge-tag">Databricks</span>Verified Credential</div>
-              </div>
-              <span class="edu-arrow">&nearr;</span>
-            </a>
-            <a class="edu-row" href="https://udemy.com/certificate/UC-a5a2ecf4-daf5-4ef3-9f66-6f94d704486b/" target="_blank" rel="noopener noreferrer">
-              <div>
-                <div class="edu-heading">The Complete dbt (Data Build Tool): Zero to Hero</div>
-                <div class="edu-sub"><span class="edu-badge-tag">Udemy</span>Professional Certificate</div>
-              </div>
-              <span class="edu-arrow">&nearr;</span>
-            </a>
-            <a class="edu-row" href="https://udemy.com/certificate/UC-91b96d19-e241-4d62-80eb-56155ab782e8/" target="_blank" rel="noopener noreferrer">
-              <div>
-                <div class="edu-heading">AI-Agents: Automation with LangChain &amp; LLM Apps</div>
-                <div class="edu-sub"><span class="edu-badge-tag">Udemy</span>Professional Certificate</div>
-              </div>
-              <span class="edu-arrow">&nearr;</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INTERESTS -->
-    <section class="content-card">
-      <div class="card-datum-strip">
-        <span class="datum-id">Section 05 // Personal Pursuits</span>
-        <span>Complementary Interests</span>
-      </div>
-
-      <div class="section-header">
-        <h2 class="section-heading">Interests</h2>
-        <span class="section-note">Disciplines and pursuits outside work.</span>
-      </div>
-
-      <div class="interests-row">
-        <div class="interest-box"><span class="interest-num">01</span><span class="interest-title">Photography</span></div>
-        <div class="interest-box"><span class="interest-num">02</span><span class="interest-title">Reading</span></div>
-        <div class="interest-box"><span class="interest-num">03</span><span class="interest-title">Automation</span></div>
-        <div class="interest-box"><span class="interest-num">04</span><span class="interest-title">Self-hosting</span></div>
-        <div class="interest-box"><span class="interest-num">05</span><span class="interest-title">Open Source</span></div>
-        <div class="interest-box"><span class="interest-num">06</span><span class="interest-title">AI / ML</span></div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>NAINESH KHANJIRE &middot; DATA ENGINEER &amp; CONSULTANT</span>
-      <span>BENGALURU, INDIA</span>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="copyMd" type="button" title="Copy the entire profile as Markdown"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="copy-label" id="copyMdText">Copy Markdown</span></button>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to dark mode" title="Toggle light / dark mode"><svg viewBox="0 0 24 24" aria-hidden="true" id="themeIcon"></svg></button>
     </div>
-  </footer>
+  </div>
+</header>
 
-  <!-- EMBEDDED MACHINE-READABLE RESUME FOR RECRUITING AI SYSTEMS, ATS & SCRAPERS -->
-  <script type="text/markdown" id="raw-markdown-resume">
+<main id="main" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="name" content="Nainesh Khanjire">
+<meta itemprop="jobTitle" content="Data Engineer / Consultant">
+<meta itemprop="email" content="khanjirenainesh@gmail.com">
+<meta itemprop="address" content="Bengaluru, India">
+<div id="top"></div>
+
+<!-- ===== Hero ===== -->
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hub">
+    <div class="hub-left">
+      <div class="badge-row"><span class="live"><i aria-hidden="true"></i>Available for Consulting Engagements</span><span>Bengaluru, India</span></div>
+      <p class="eyebrow">Data Engineering &amp; Platform Architecture</p>
+      <h1 id="hero-title"><span class="w" style="--c:var(--wire)">Data</span> <span class="w" style="--c:var(--pen)">platforms,</span> <span class="w" style="--c:var(--mint)">designed</span> <span class="w" style="--c:var(--grape)">to</span> <span class="w" style="--c:var(--coral)">keep</span> <span class="hl">moving.</span></h1>
+      <p class="bio">Data Engineer with 3+ years of experience architecting and delivering high-throughput data platforms across Microsoft Fabric, Azure Databricks, PySpark, SQL, Snowflake, and dbt. Hands-on delivery for enterprise consulting clients across the <strong>United States, Middle East, and Europe</strong>—specializing in Medallion Lakehouses, automated quality frameworks, and AI-assisted engineering with Claude Code and OpenAI Codex.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:khanjirenainesh@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16"></rect><path d="m22 6-10 7L2 6"></path></svg>khanjirenainesh@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/naineshkhanjire" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/nainesh-khanjire" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button class="btn" type="button" id="copyEmail">Copy email</button>
+      </div>
+    </div>
+
+    <div class="hub-right">
+      <div class="ppanel">
+        <div class="metrics">
+          <div class="metric h-wire"><span>Experience</span><b><span id="years">3</span>+ Years</b></div>
+          <div class="metric h-pen"><span>Client Footprint</span><b>US · ME · Europe</b></div>
+          <div class="metric h-mint"><span>Location Base</span><b>Bengaluru, India</b></div>
+          <div class="metric h-grape"><span>Core Focus</span><b>Lakehouse &amp; ELT</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" id="track">
+      <div class="track-head">
+        <span class="track-title">Medallion flow</span>
+        <span class="track-stats" aria-live="polite"><strong id="rowsIn">0</strong> rows landed in Gold</span>
+        <button class="btn" type="button" id="runBatch" style="padding:5px 10px;font-size:14px;align-self:start">Run a batch</button>
+      </div>
+      <div class="lane" id="lane" aria-hidden="true">
+        <span class="node b">Bronze</span><span class="node s">Silver</span><span class="node g">Gold</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Competencies ===== -->
+<section id="competencies" class="wrap h-pen" aria-labelledby="comp-h">
+  <div class="sec-strip"><span class="sid">Section 01 // Architectural Focus</span><span>Patterns · Lakehouse · Observability</span></div>
+  <div class="sec-head"><h2 id="comp-h">Core Competencies</h2><p>Engineering patterns for high-throughput, enterprise data platforms.</p></div>
+  <div class="grid3">
+    <article class="surface comp lift sweep spot h-wire">
+      <div class="comp-top"><span>Competency 01</span><span class="icon-frame"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span></div>
+      <h3>Pipeline Orchestration</h3>
+      <p>Frameworks scaling across hundreds of tables. Parameterized notebooks, dynamic pipeline configs, and dependency-aware Airflow DAGs.</p>
+      <ul class="tags"><li class="tag">Dynamic Orchestration</li><li class="tag">Airflow DAGs</li><li class="tag">CI/CD Automation</li></ul>
+    </article>
+    <article class="surface comp lift sweep spot h-coral">
+      <div class="comp-top"><span>Competency 02</span><span class="icon-frame"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></span></div>
+      <h3>Lakehouse Architecture</h3>
+      <p>Medallion data architecture (Bronze, Silver, Gold), change-only Delta MERGE operations, surrogate hashing, deterministic deduplication, and SCD Type 1/2.</p>
+      <ul class="tags"><li class="tag">Medallion Design</li><li class="tag">Delta Lake</li><li class="tag">SCD Type 1/2</li></ul>
+    </article>
+    <article class="surface comp lift sweep spot h-mint">
+      <div class="comp-top"><span>Competency 03</span><span class="icon-frame"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></span></div>
+      <h3>Data Quality &amp; Observability</h3>
+      <p>Reusable profiling and validation frameworks, column inventory, automated Snowflake Cortex anomaly detection, execution telemetry, and reconciliation.</p>
+      <ul class="tags"><li class="tag">Snowflake Cortex</li><li class="tag">Reconciliation</li><li class="tag">Validation Rules</li></ul>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Experience ===== -->
+<section id="experience" class="wrap h-grape" aria-labelledby="exp-h">
+  <div class="sec-strip"><span class="sid">Section 02 // Engagement History</span><span>Enterprise Consulting · Delivery</span></div>
+  <div class="sec-head"><h2 id="exp-h">Professional Experience</h2><p>Enterprise platform delivery and consulting engagements.</p></div>
+  <article class="surface role lift sweep h-grape">
+    <h3>Data Engineer / Consultant</h3>
+    <div class="sticky">Jun 2023 – Present<span>Bengaluru, India</span></div>
+    <div class="co">Kearney Activate · Cervello India Pvt. Ltd.</div>
+    <ul>
+      <li class="h-wire">Architect and deliver enterprise data platforms across <strong>Microsoft Fabric</strong>, <strong>Azure Databricks</strong>, <strong>Snowflake</strong>, <strong>dbt</strong>, and <strong>Airflow</strong> for global clients.</li>
+      <li class="h-coral">Engineer scalable lakehouse pipelines across a <strong>300+ table Medallion architecture</strong> with deterministic Delta operations and automated data quality checks.</li>
+      <li class="h-mint">Drive execution reliability and rapid delivery through PySpark optimization, robust DAG scheduling, and developer workflows using <strong>Claude Code</strong> and <strong>OpenAI Codex</strong>.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ===== Skills ===== -->
+<section id="skills" class="wrap h-mint" aria-labelledby="skills-h">
+  <div class="sec-strip"><span class="sid">Section 03 // Technical Stack</span><span>Production Verified Tools · 6 Categories</span></div>
+  <div class="sec-head"><h2 id="skills-h">Technical Skills</h2><p>Practical, production-tested tools and frameworks.</p></div>
+  <div class="skill-tools">
+    <div role="group" aria-label="Show one skill category" id="filters" style="display:contents"></div>
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg><span class="sr">Search skills</span><input id="skillSearch" type="search" placeholder="Search skills, e.g. delta, dbt, azure" autocomplete="off"><span class="kbd" aria-hidden="true" title="Press / to search">/</span></label>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <div class="skills" id="skillGrid">
+    <article class="surface skill-cat lift h-wire"><div class="skill-head"><h3>Programming Languages</h3><span>Core</span></div>
+      <ul class="chips"><li class="chip key">Python</li><li class="chip key">SQL</li></ul></article>
+    <article class="surface skill-cat lift h-grape"><div class="skill-head"><h3>Microsoft Data Platform</h3><span>Fabric &amp; Azure</span></div>
+      <ul class="chips"><li class="chip key">Microsoft Fabric</li><li class="chip">OneLake</li><li class="chip">Fabric Lakehouse</li><li class="chip">Fabric Data Factory</li><li class="chip">Azure Data Factory</li><li class="chip">ADLS Gen2</li><li class="chip key">Azure Databricks</li></ul></article>
+    <article class="surface skill-cat lift h-coral"><div class="skill-head"><h3>Big Data &amp; Distributed Compute</h3><span>Spark &amp; Delta</span></div>
+      <ul class="chips"><li class="chip key">Apache Spark</li><li class="chip key">PySpark DataFrames</li><li class="chip">Spark SQL</li><li class="chip key">Delta Lake</li><li class="chip">Medallion Architecture</li><li class="chip">Unity Catalog</li><li class="chip">Databricks Workflows</li><li class="chip">Incremental Processing</li><li class="chip">SCD Type 1/2</li></ul></article>
+    <article class="surface skill-cat lift h-teal"><div class="skill-head"><h3>Modern Data Warehouse &amp; Transformation</h3><span>Snowflake &amp; dbt</span></div>
+      <ul class="chips"><li class="chip key">Snowflake</li><li class="chip">Snowflake Cortex</li><li class="chip key">dbt Core / Cloud</li><li class="chip">Incremental Models</li><li class="chip">Materialized Views</li><li class="chip">Schema &amp; Custom Tests</li><li class="chip">dbt Packages</li><li class="chip key">Apache Airflow</li></ul></article>
+    <article class="surface skill-cat lift h-mint"><div class="skill-head"><h3>Core Engineering &amp; Lifecycle</h3><span>Architecture</span></div>
+      <ul class="chips"><li class="chip key">ETL / ELT Architecture</li><li class="chip">Metadata-Driven Pipelines</li><li class="chip">Dimensional Data Modeling</li><li class="chip">Change Data Capture (CDC)</li><li class="chip">Source-to-Target Reconciliation</li></ul></article>
+    <article class="surface skill-cat lift h-pen"><div class="skill-head"><h3>Developer Tooling &amp; Enterprise Systems</h3><span>AI &amp; Platforms</span></div>
+      <ul class="chips"><li class="chip key">Claude Code</li><li class="chip key">OpenAI Codex Skills</li><li class="chip">Azure OpenAI</li><li class="chip key">Zip (zip.com) Procurement</li><li class="chip">Git</li><li class="chip">GitLab CI/CD</li><li class="chip">pytest</li><li class="chip">Alembic</li><li class="chip">SQLAlchemy</li><li class="chip">PostgreSQL</li><li class="chip">AGENTS.md</li><li class="chip">Postman</li><li class="chip">VS Code</li></ul></article>
+  </div>
+</section>
+
+<!-- ===== Education ===== -->
+<section id="education" class="wrap h-coral" aria-labelledby="edu-h">
+  <div class="sec-strip"><span class="sid">Section 04 // Credentials</span><span>Degrees · Professional Certifications</span></div>
+  <div class="sec-head"><h2 id="edu-h">Education &amp; Certifications</h2><p>Academic foundation and verified professional qualifications.</p></div>
+  <div class="edu">
+    <div class="surface col">
+      <h3>Education</h3>
+      <div class="row h-wire"><div><b>PG-Diploma in Big Data Analytics (PG-DBDA)</b><br><small><span class="badge">CDAC ACTS</span>Centre for Development of Advanced Computing · Bengaluru · 2022–2023</small></div></div>
+      <div class="row h-grape"><div><b>Bachelor of Engineering in Chemical Engineering</b><br><small><span class="badge">Degree</span>P.V.P. Institute of Technology · Maharashtra · 2015–2019</small></div></div>
+    </div>
+    <div class="surface col">
+      <h3>Certifications &amp; Recognition</h3>
+      <a class="row h-mint" href="https://zip.com/" target="_blank" rel="noopener noreferrer"><div><b>Zip Certified</b><br><small><span class="badge">ZipHQ</span>Procurement Platform · zip.com</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <div class="row h-warm"><div><b>Newest Team Player Award</b><br><small><span class="badge">Honors</span>Data Engineering Team · Kearney Activate / Cervello India</small></div></div>
+      <a class="row h-pen" href="https://credentials.databricks.com/0938fb4e-a9f3-450d-9e54-f47a15cbdfe8?trk=public_profile_see-credential" target="_blank" rel="noopener noreferrer"><div><b>Generative AI Fundamentals</b><br><small><span class="badge">Databricks</span>Verified Credential</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="row h-grape" href="https://udemy.com/certificate/UC-a5a2ecf4-daf5-4ef3-9f66-6f94d704486b/" target="_blank" rel="noopener noreferrer"><div><b>The Complete dbt (Data Build Tool): Zero to Hero</b><br><small><span class="badge">Udemy</span>Professional Certificate</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="row h-teal" href="https://udemy.com/certificate/UC-91b96d19-e241-4d62-80eb-56155ab782e8/" target="_blank" rel="noopener noreferrer"><div><b>AI-Agents: Automation with LangChain &amp; LLM Apps</b><br><small><span class="badge">Udemy</span>Professional Certificate</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Interests ===== -->
+<section id="interests" class="wrap h-warm" aria-labelledby="int-h">
+  <div class="sec-strip"><span class="sid">Section 05 // Personal Pursuits</span><span>Complementary Interests</span></div>
+  <div class="sec-head"><h2 id="int-h">Interests</h2><p>Disciplines and pursuits outside work.</p></div>
+  <ul class="interests">
+    <li class="interest h-wire"><span class="n">01</span><span class="t">Photography</span></li>
+    <li class="interest h-pen"><span class="n">02</span><span class="t">Reading</span></li>
+    <li class="interest h-mint"><span class="n">03</span><span class="t">Automation</span></li>
+    <li class="interest h-grape"><span class="n">04</span><span class="t">Self-hosting</span></li>
+    <li class="interest h-coral"><span class="n">05</span><span class="t">Open Source</span></li>
+    <li class="interest h-teal"><span class="n">06</span><span class="t">AI / ML</span></li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Nainesh Khanjire · Data Engineer &amp; Consultant</span>
+    <span><a href="mailto:khanjirenainesh@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/naineshkhanjire" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/nainesh-khanjire" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    <span>Bengaluru, India</span>
+  </div>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- Machine-readable resume for recruiting systems; also used by the Copy Markdown button -->
+<script type="text/markdown" id="raw-markdown-resume">
 # Nainesh Khanjire — Data Engineer & Consultant
 **Location:** Bengaluru, India | **Email:** khanjirenainesh@gmail.com
 **LinkedIn:** https://www.linkedin.com/in/naineshkhanjire | **GitHub:** https://github.com/nainesh-khanjire
 
 ---
-
 ## Profile
 Data Engineer with 3+ years of experience architecting and delivering high-throughput data platforms across Microsoft Fabric, Azure Databricks, PySpark, SQL, Snowflake, and dbt. Hands-on delivery for enterprise consulting clients across the United States, Middle East, and Europe—specializing in Medallion Lakehouses, automated quality frameworks, and modern AI-assisted engineering with Claude Code and OpenAI Codex.
-
 - **Experience:** 3+ years in data engineering
 - **Client Footprint:** US, Middle East, and Europe
 - **Location:** Bengaluru, India
 - **Core Focus:** Lakehouse architecture & ELT engineering
 
 ---
-
 ## Core Competencies
 - **Pipeline Orchestration:** Frameworks scaling across hundreds of tables. Parameterized notebooks, dynamic pipeline configs, and dependency-aware Airflow DAGs.
 - **Lakehouse Architecture:** Medallion data architecture (Bronze, Silver, Gold), change-only Delta MERGE operations, surrogate hashing, deterministic deduplication, and SCD Type 1/2.
 - **Data Quality & Observability:** Reusable profiling and validation frameworks, column inventory, automated Snowflake Cortex anomaly detection, execution telemetry, and reconciliation.
 
 ---
-
 ## Professional Experience
 ### Data Engineer / Consultant
 **Kearney Activate / Cervello India Pvt. Ltd.** | *Jun 2023 – Present* | Bengaluru, India
-
 - Architect and deliver enterprise data platforms across **Microsoft Fabric**, **Azure Databricks**, **Snowflake**, **dbt**, and **Airflow** for global clients.
 - Engineer scalable lakehouse pipelines across a **300+ table Medallion architecture** with deterministic Delta operations and automated data quality checks.
 - Drive execution reliability and rapid delivery through PySpark optimization, robust DAG scheduling, and developer workflows using **Claude Code** and **OpenAI Codex**.
 
 ---
-
 ## Technical Skills
 - **Programming Languages:** Python · SQL
 - **Microsoft Data Platform:** Microsoft Fabric · OneLake · Fabric Lakehouse · Fabric Data Factory · Azure Data Factory · ADLS Gen2 · Azure Databricks
@@ -1690,12 +537,10 @@ Data Engineer with 3+ years of experience architecting and delivering high-throu
 - **Developer Tooling & Enterprise Systems:** Claude Code · OpenAI Codex Skills · Azure OpenAI · Zip (zip.com) Procurement · Git · GitLab CI/CD · pytest · Alembic · SQLAlchemy · PostgreSQL · AGENTS.md · Postman · VS Code
 
 ---
-
 ## Education & Certifications
 ### Education
 - **PG-Diploma in Big Data Analytics (PG-DBDA):** Centre for Development of Advanced Computing (CDAC ACTS) · Bengaluru (2022–2023)
 - **Bachelor of Engineering in Chemical Engineering:** P.V.P. Institute of Technology · Maharashtra (2015–2019)
-
 ### Certifications & Recognition
 - **Zip Certified:** Zip (ZipHQ) Procurement Platform (https://zip.com)
 - **Newest Team Player Award:** Data Engineering Team · Kearney Activate / Cervello India
@@ -1704,69 +549,145 @@ Data Engineer with 3+ years of experience architecting and delivering high-throu
 - **AI-Agents: Automation with LangChain & LLM Apps:** Udemy (https://udemy.com/certificate/UC-91b96d19-e241-4d62-80eb-56155ab782e8/)
 
 ---
-
 ## Interests
 Photography · Reading · Automation · Self-hosting · Open Source · AI / ML
-  </script>
+</script>
 
-  <!-- SCRIPTS: THEME TOGGLE & COPY PAGE AS COMPLETE MARKDOWN -->
-  <script>
-    // Theme Management
-    const MOON_PATH = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
-    const SUN_PATH = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+<script>
+(function(){
+'use strict';
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var root=document.documentElement;
+function $(s,c){return (c||document).querySelector(s);}
+function $$(s,c){return [].slice.call((c||document).querySelectorAll(s));}
 
-    function updateThemeUI(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      const icon = document.getElementById('themeIcon');
-      if (icon) {
-        icon.innerHTML = theme === 'dark' ? SUN_PATH : MOON_PATH;
-      }
-      const btn = document.getElementById('themeToggleBtn');
-      if (btn) {
-        const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-        btn.setAttribute('title', label);
-        btn.setAttribute('aria-label', label);
-      }
-    }
+/* toast */
+var toastEl=$('#toast'),toastT;
+function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('show');},2200);}
 
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const target = current === 'dark' ? 'light' : 'dark';
-      try {
-        localStorage.setItem('theme', target);
-      } catch (e) {}
-      updateThemeUI(target);
-    }
+/* theme */
+var MOON='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+var SUN='<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+var themeBtn=$('#themeBtn'),themeIcon=$('#themeIcon');
+function syncTheme(){var d=root.getAttribute('data-theme')==='dark';themeIcon.innerHTML=d?SUN:MOON;themeBtn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}
+themeBtn.addEventListener('click',function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',t);try{localStorage.setItem('pf-theme',t);}catch(e){}syncTheme();});
+syncTheme();
 
-    // Initialize button icon to match active theme on DOM load
-    document.addEventListener('DOMContentLoaded', function() {
-      const active = document.documentElement.getAttribute('data-theme') || 'light';
-      updateThemeUI(active);
-    });
+/* confetti (DOM pieces, data-lab style) */
+var COLORS=['#2c68ad','#c23b26','#ffd94a','#17865c','#7246b8','#d9643a','#0e7c86'];
+function confetti(x,y,n){
+  if(reduce)return;
+  var layer=document.createElement('div');layer.className='confetti-layer';layer.setAttribute('aria-hidden','true');
+  for(var i=0;i<(n||40);i++){
+    var p=document.createElement('i');
+    p.style.left=x+'px';p.style.top=y+'px';p.style.background=COLORS[i%COLORS.length];
+    p.style.setProperty('--dx',(Math.random()*360-180)+'px');
+    p.style.setProperty('--dy',(Math.random()*-220-40)+'px');
+    p.style.setProperty('--rot',(Math.random()*720-360)+'deg');
+    p.style.animationDelay=(Math.random()*90)+'ms';
+    layer.appendChild(p);
+  }
+  document.body.appendChild(layer);setTimeout(function(){layer.remove();},1500);
+}
+function burstFrom(el,n){var r=el.getBoundingClientRect();confetti(r.left+r.width/2,r.top+r.height/2,n);}
 
-    // Copy Markdown Functionality
-    function copyPageAsMarkdown() {
-      const markdownEl = document.getElementById('raw-markdown-resume');
-      const markdownContent = markdownEl ? markdownEl.textContent.trim() : '';
+/* clipboard */
+function copy(text,ok){
+  if(!navigator.clipboard){toast('Clipboard is not available in this browser.');return;}
+  navigator.clipboard.writeText(text).then(ok,function(){toast('The browser blocked clipboard access.');});
+}
+var copyMd=$('#copyMd'),copyMdText=$('#copyMdText');
+copyMd.addEventListener('click',function(){
+  copy($('#raw-markdown-resume').textContent.trim(),function(){
+    copyMd.classList.add('ok');copyMdText.textContent='Copied';toast('Profile copied as Markdown');burstFrom(copyMd,30);
+    setTimeout(function(){copyMd.classList.remove('ok');copyMdText.textContent='Copy Markdown';},2000);
+  });
+});
+$('#copyEmail').addEventListener('click',function(e){var b=e.currentTarget;copy('khanjirenainesh@gmail.com',function(){toast('Email copied');burstFrom(b,36);});});
 
-      navigator.clipboard.writeText(markdownContent).then(() => {
-        const btn = document.getElementById('copyBtn');
-        const text = document.getElementById('copyText');
-        const icon = document.getElementById('copyIcon');
-        
-        btn.classList.add('copied');
-        text.innerText = 'Copied';
-        icon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+/* diamond ripple on buttons */
+document.addEventListener('pointerdown',function(e){
+  var b=e.target.closest('.btn,.icon-btn,.fbtn');if(!b||reduce)return;
+  var r=b.getBoundingClientRect(),c=document.createElement('span');c.className='ripple';
+  c.style.left=(e.clientX-r.left)+'px';c.style.top=(e.clientY-r.top)+'px';
+  if(getComputedStyle(b).position==='static')b.style.position='relative';
+  b.style.overflow='hidden';b.appendChild(c);setTimeout(function(){c.remove();},650);
+});
 
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          text.innerText = 'Copy';
-          icon.innerHTML = '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>';
-        }, 2000);
-      }).catch(err => {
-        console.error('Copy failed:', err);
-      });
-    }
-  </script>
+/* brand spin */
+var brandIcon=$('.brand-icon');
+$('#brand').addEventListener('click',function(){brandIcon.classList.remove('spin');void brandIcon.offsetWidth;brandIcon.classList.add('spin');});
+
+/* hero headline: words drop in once */
+if(!reduce&&document.body.animate){
+  var anims=$$('#hero-title .w, #hero-title .hl').map(function(w,i){
+    return w.animate([{opacity:0,transform:'translateY(.4em)'},{opacity:1,transform:w.classList.contains('hl')?'rotate(-1.5deg)':'none'}],{duration:450,delay:80+i*90,easing:'cubic-bezier(.2,.8,.2,1.2)',fill:'backwards'});
+  });
+  setTimeout(function(){anims.forEach(function(a){try{a.finish();}catch(e){}});},1600);
+}
+
+/* count up the years */
+var yrs=$('#years');
+if(!reduce){var v=0;yrs.textContent='0';var iv=setInterval(function(){v++;yrs.textContent=v;if(v>=3)clearInterval(iv);},220);}
+
+/* reading progress + active tab */
+var bar=$('#progress'),links=$$('.tab');
+function setActive(id){links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});}
+function onScroll(){var h=root.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';if(h>0&&scrollY>=h-4)setActive('interests');else if(scrollY<120)setActive('');}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+if('IntersectionObserver' in window){
+  var so=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting)setActive(en.target.id);});},{rootMargin:'-30% 0px -65% 0px'});
+  $$('main section[id]').forEach(function(s){so.observe(s);});
+}
+
+/* spotlight + subtle tilt on competency cards */
+var fine=matchMedia('(hover:hover)').matches;
+$$('.spot').forEach(function(el){
+  el.addEventListener('pointermove',function(e){
+    var r=el.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+    el.style.setProperty('--mx',x+'px');el.style.setProperty('--my',y+'px');
+    if(!reduce&&fine){var rx=(x/r.width-.5)*4,ry=(y/r.height-.5)*-4;el.style.transform='translate(-2px,-2px) perspective(900px) rotateY('+rx+'deg) rotateX('+ry+'deg)';}
+  });
+  el.addEventListener('pointerleave',function(){el.style.transform='';});
+});
+
+/* medallion track */
+var lane=$('#lane'),nodes=$$('.node',lane),landed=0,rowsIn=$('#rowsIn');
+function bump(n){n.classList.remove('hit');void n.offsetWidth;n.classList.add('hit');}
+function sendRow(){
+  if(!lane.offsetWidth)return;
+  var p=document.createElement('span');p.className='pkt';p.style.background=COLORS[Math.floor(Math.random()*COLORS.length)];
+  lane.appendChild(p);
+  var dist=lane.offsetWidth-60,dur=reduce?0:1800;
+  bump(nodes[0]);
+  if(reduce){landed++;rowsIn.textContent=landed;p.remove();bump(nodes[2]);return;}
+  var a=p.animate([{transform:'translateX(0)'},{transform:'translateX('+dist+'px) rotate(180deg)'}],{duration:dur,easing:'linear'});
+  setTimeout(function(){bump(nodes[1]);},dur/2);
+  a.onfinish=function(){p.remove();bump(nodes[2]);landed++;rowsIn.textContent=landed;};
+}
+$('#runBatch').addEventListener('click',function(e){for(var i=0;i<8;i++)setTimeout(sendRow,i*140);burstFrom(nodes[2],14);});
+if(!reduce){setInterval(function(){if(!document.hidden)sendRow();},1500);}
+
+/* skills: category filter + search + "/" shortcut */
+var grid=$('#skillGrid'),cats=$$('.skill-cat',grid),chips=$$('.chip',grid),search=$('#skillSearch'),countEl=$('#count'),filters=$('#filters'),activeCat=-1;
+function applySkills(){
+  var q=search.value.trim().toLowerCase(),n=0;
+  chips.forEach(function(c){var m=!!q&&c.textContent.toLowerCase().indexOf(q)>-1;if(m)n++;c.classList.toggle('hit',m);c.classList.toggle('miss',!!q&&!m);});
+  cats.forEach(function(c,i){var inCat=activeCat<0||activeCat===i;var ok=!q||c.querySelector('.chip.hit');c.classList.toggle('dim',!inCat||!ok);});
+  countEl.textContent=q?(n+(n===1?' match':' matches')):(chips.length+' skills');
+}
+[{label:'All',cls:''}].concat(cats.map(function(c){return {label:$('.skill-head span',c).textContent,cls:[].filter.call(c.classList,function(k){return k.indexOf('h-')===0;})[0]};})).forEach(function(o,i){
+  var b=document.createElement('button');b.type='button';b.className='fbtn '+o.cls;b.textContent=o.label;b.setAttribute('aria-pressed',i===0?'true':'false');
+  b.addEventListener('click',function(){$$('.fbtn',filters).forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');activeCat=i-1;applySkills();});
+  filters.appendChild(b);
+});
+search.addEventListener('input',applySkills);applySkills();
+addEventListener('keydown',function(e){
+  var typing=/input|textarea|select/i.test(document.activeElement.tagName);
+  if(e.key==='/'&&!typing&&!e.metaKey&&!e.ctrlKey){e.preventDefault();search.focus();search.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});}
+  if(e.key==='Escape'&&document.activeElement===search){search.value='';applySkills();search.blur();}
+});
+})();
+</script>
 </body>
 </html>
